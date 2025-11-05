@@ -1,0 +1,281 @@
+<template>
+  <div>
+    <PageHeader
+      title="Freightmate: orchestrate every shipment in one workspace"
+      description="Freightmate centralises quoting, booking, tracking, and analytics across TUCO-managed carrier networks so every load stays visible and on-plan."
+    >
+      <template #eyebrow>Freightmate Platform</template>
+    </PageHeader>
+
+    <section class="bg-[var(--color-tuco-sky)]/40 py-16">
+      <div class="container mx-auto grid gap-10 px-4 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+        <div class="space-y-6">
+          <h2 class="text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl">
+            Built for teams who need real-time freight control
+          </h2>
+          <p class="text-lg text-[var(--color-tuco-slate)]">
+            Freightmate replaces disparate carrier portals, spreadsheets, and inbox chases. It works alongside TUCO specialists or your internal teams to keep every move visible, accountable, and ready for action.
+          </p>
+          <ul class="space-y-3 text-[var(--color-tuco-slate)]">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-[var(--color-tuco-blue)]"></span>
+              <span>Optimised quoting and routing that respect transit, capacity, and carrier compliance rules.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-[var(--color-tuco-blue)]"></span>
+              <span>Live tracking timeline shared across operations, commercial, and customer service teams.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-[var(--color-tuco-blue)]"></span>
+              <span>Exception guardrails and SLA alerts that trigger responses before customers chase updates.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="rounded-[2rem] bg-[var(--color-tuco-card)] p-8 shadow-card-soft ring-1 ring-[var(--color-tuco-line)]">
+          <h3 class="text-xl font-semibold text-[var(--color-tuco-navy)]">Platform snapshot</h3>
+          <dl class="mt-6 grid gap-6 sm:grid-cols-2">
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-tuco-blue)]">Carriers supported</dt>
+              <dd class="mt-2 text-3xl font-semibold text-[var(--color-tuco-navy)]">200+</dd>
+              <p class="mt-1 text-sm text-[var(--color-tuco-slate)]">Parcel, pallet, airfreight, linehaul, courier, and specialist.</p>
+            </div>
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-tuco-blue)]">Automations</dt>
+              <dd class="mt-2 text-3xl font-semibold text-[var(--color-tuco-navy)]">60+</dd>
+              <p class="mt-1 text-sm text-[var(--color-tuco-slate)]">Dispatch workflows, exception handling, and compliance checks baked in.</p>
+            </div>
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-tuco-blue)]">Onboarding window</dt>
+              <dd class="mt-2 text-3xl font-semibold text-[var(--color-tuco-navy)]">6-10 weeks</dd>
+              <p class="mt-1 text-sm text-[var(--color-tuco-slate)]">TUCO project squads guide data, integrations, and change management.</p>
+            </div>
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-tuco-blue)]">Visibility</dt>
+              <dd class="mt-2 text-3xl font-semibold text-[var(--color-tuco-navy)]">Real-time</dd>
+              <p class="mt-1 text-sm text-[var(--color-tuco-slate)]">Tracking, POD, and analytics refresh as events happen across the network.</p>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-center text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl">Freightmate modules</h2>
+        <p class="mx-auto mt-4 max-w-3xl text-center text-[var(--color-tuco-slate)]">
+          Freightmate keeps every stakeholder on the same story, from the first quote through to proactive reviews and optimisation.
+        </p>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <article
+            v-for="module in modules"
+            :key="module.title"
+            class="tuco-card flex h-full flex-col gap-4 p-6 md:p-7 lg:p-8"
+          >
+            <div class="flex items-start gap-4">
+              <span
+                class="mt-1 inline-flex h-11 w-11 flex-none items-center justify-center rounded-full bg-[var(--color-tuco-sky)] text-[var(--color-tuco-blue)]"
+              >
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <circle cx="12" cy="12" r="10" opacity="0.2" fill="currentColor" />
+                  <path d="M12 7v10M7 12h10" stroke-linecap="round" />
+                </svg>
+              </span>
+              <div>
+                <h3 class="text-lg font-semibold text-[var(--color-tuco-navy)] md:text-xl">{{ module.title }}</h3>
+                <p class="mt-2 text-sm text-[var(--color-tuco-slate)] md:text-base">{{ module.body }}</p>
+              </div>
+            </div>
+            <ul class="mt-auto space-y-2 text-sm text-[var(--color-tuco-slate)]">
+              <li v-for="point in module.points" :key="point" class="flex items-start gap-2">
+                <span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--color-tuco-blue)]"></span>
+                <span>{{ point }}</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[var(--color-tuco-sky)]/60 py-16">
+      <div class="container mx-auto grid gap-12 px-4 lg:grid-cols-[1fr_1fr]">
+        <div class="space-y-5">
+          <h2 class="text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl">Integrations and data</h2>
+          <p class="text-lg text-[var(--color-tuco-slate)]">
+            Freightmate connects to ERPs, WMS, ecommerce platforms, customer tools, and analytics suites. Use TUCO's native connectors or build on the open API—either way data syncs automatically.
+          </p>
+          <div class="mt-6 grid gap-4 sm:grid-cols-2">
+            <a
+              v-for="item in integrationItems"
+              :key="item.label"
+              :href="item.href"
+              class="flex items-center gap-4 rounded-2xl border border-[var(--color-tuco-line)] bg-white p-4 shadow-lg/5 transition hover:-translate-y-[2px] hover:shadow-lg/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-tuco-blue)] focus-visible:ring-offset-2"
+            >
+              <img :src="item.src" :alt="`${item.label} logo`" class="h-10 w-10 flex-none object-contain" />
+              <div>
+                <p class="text-sm font-semibold text-[var(--color-tuco-navy)]">{{ item.label }}</p>
+                <p class="text-xs text-[var(--color-tuco-slate)]">{{ item.desc }}</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] bg-[var(--color-tuco-card)] p-8 shadow-card-soft ring-1 ring-[var(--color-tuco-line)]">
+          <h3 class="text-xl font-semibold text-[var(--color-tuco-navy)]">Analytics ready from day one</h3>
+          <p class="mt-4 text-[var(--color-tuco-slate)]">
+            Freightmate ships with dashboards that highlight service performance, utilisation, and customer experience. Push data to Snowflake, Power BI, or Looker-or work directly inside Freightmate's reporting suite.
+          </p>
+          <ul class="mt-6 space-y-3 text-sm text-[var(--color-tuco-slate)]">
+            <li>Scheduled exports and automated insights keep leadership, operations, and commercial teams aligned.</li>
+            <li>Event webhooks trigger downstream workflows in real time.</li>
+            <li>Audit logs and role-based access deliver the governance you expect from enterprise platforms.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16">
+      <div class="container mx-auto grid gap-12 px-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div>
+          <h2 class="text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl">Implementation guided by TUCO</h2>
+          <p class="mt-4 text-lg text-[var(--color-tuco-slate)]">
+            TUCO embeds alongside your project team to configure carriers, build integrations, and train users. Every rollout is staged so operations keep moving while Freightmate goes live.
+          </p>
+          <div class="mt-8 space-y-4">
+            <div v-for="stage in onboarding" :key="stage.title" class="rounded-2xl border border-[var(--color-tuco-line)] p-5">
+              <h3 class="text-lg font-semibold text-[var(--color-tuco-navy)]">{{ stage.title }}</h3>
+              <p class="mt-2 text-sm text-[var(--color-tuco-slate)]">{{ stage.body }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] bg-navy-500 p-8 text-white shadow-card-soft">
+          <h3 class="text-2xl font-semibold text-white/90">Customer outcomes</h3>
+          <ul class="mt-6 space-y-4 text-white/80">
+            <li>Booking and manifest time cut by 50% for national shippers.</li>
+            <li>Exception visibility and proactive comms reduce inbound support calls by 40%.</li>
+            <li>End-to-end tracking and SLA dashboards surface performance issues before they impact customers.</li>
+            <li>Leadership teams receive unified analytics across DIFOT, utilisation, and carbon to guide reviews.</li>
+          </ul>
+          <p class="mt-6 text-sm text-white/70">
+            "Freightmate gave us one place to manage rates, bookings, and tracking. TUCO's team made the rollout painless." - Jess, Operations Lead
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CallToAction>
+      <template #eyebrow>Book a Freightmate demo</template>
+      <template #title>Ready to transform your freight network?</template>
+      <template #description>
+        Walk through Freightmate with TUCO specialists. We'll map your carrier set, systems, and targets to the platform and outline delivery timelines.
+      </template>
+      <template #actions>
+        <Button variant="secondary" size="lg" to="/contact">Talk to a consultant</Button>
+      </template>
+    </CallToAction>
+  </div>
+</template>
+
+<script setup lang="ts">
+import Button from "@/components/common/Button.vue";
+import CallToAction from "@/components/common/CallToAction.vue";
+import PageHeader from "@/components/common/PageHeader.vue";
+import { useSEO } from "@/composables/useSEO";
+
+const modules = [
+  {
+    title: "Quote, rank & route",
+    body: "Bring every contracted carrier, service, and surcharge into one rating engine so teams choose the best option within seconds.",
+    points: [
+      "Supports volumetric, cubic, weights, multi-leg and premium freight logic.",
+      "Configurable business rules with easy manual overrides when required.",
+      "Scenario planning highlights capacity or compliance constraints before you confirm."
+    ]
+  },
+  {
+    title: "Book & dispatch",
+    body: "Create consignments, manifests, and labels in bulk or individually while the dock and pickups stay synchronised.",
+    points: [
+      "Batch printing, staging, and scanning workflows streamline the warehouse.",
+      "Carrier documentation auto-generated, including dangerous goods compliance.",
+      "Exception workflows for ATL, POD imagery, re-label, and more."
+    ]
+  },
+  {
+    title: "Track & communicate",
+    body: "Every milestone, POD, and exception lives in one shared timeline so customer service resolves issues before customers call.",
+    points: [
+      "Carrier feeds harmonised into consistent milestones.",
+      "Branded notifications keep consignees informed automatically.",
+      "Exception dashboards prioritise risk with SLA impact cues."
+    ]
+  },
+  {
+    title: "Service assurance",
+    body: "Monitor carrier SLAs, capture exceptions, and deliver proactive notifications so freight stays on-plan and stakeholders stay informed.",
+    points: [
+      "Exception management workflows escalate to TUCO and customer teams quickly.",
+      "Carrier scorecards highlight DIFOT, dwell time, and root cause trends.",
+      "Customer notification templates keep consignees looped in automatically."
+    ]
+  },
+  {
+    title: "Analytics & BI",
+    body: "Executive and operational dashboards show DIFOT, carbon, carrier scorecards, and utilisation trends, all exportable to your BI stack.",
+    points: [
+      "Pre-built views for leadership, operations, and commercial teams.",
+      "Scheduled reporting plus CSV/API access for deeper modelling.",
+      "Event webhooks trigger downstream automation instantly."
+    ]
+  },
+  {
+    title: "Governance & security",
+    body: "Role-based controls, audit trails, and compliance tooling align with enterprise requirements.",
+    points: [
+      "Single sign-on, MFA, and IP restrictions supported.",
+      "Audit history on every booking, override, and communication.",
+      "Secure document storage for SOPs, carrier contracts, and safety artefacts."
+    ]
+  }
+];
+
+const integrationItems = [
+  { src: "/logos/sugarcrm.svg", label: "SugarCRM", desc: "CRM", href: "/partners/integrations" },
+  { src: "/logos/pronto.svg", label: "Pronto", desc: "ERP", href: "/partners/integrations" },
+  { src: "/logos/woo.svg", label: "WooCommerce", desc: "E-commerce", href: "/partners/integrations" },
+  { src: "/logos/odoo.svg", label: "Odoo", desc: "ERP", href: "/partners/integrations" },
+  { src: "/logos/shopify.svg", label: "Shopify", desc: "E-commerce", href: "/partners/integrations" },
+  { src: "/logos/xero.svg", label: "Xero", desc: "Accounting", href: "/partners/integrations" },
+  { src: "/logos/netsuite.svg", label: "NetSuite", desc: "ERP", href: "/partners/integrations" },
+  { src: "/logos/sap.svg", label: "SAP", desc: "ERP", href: "/partners/integrations" },
+  { src: "/logos/dynamics365.svg", label: "Dynamics 365", desc: "ERP/CRM", href: "/partners/integrations" },
+  { src: "/logos/myob.svg", label: "MYOB", desc: "Accounting", href: "/partners/integrations" },
+  { src: "/logos/cin7.svg", label: "Cin7", desc: "Inventory", href: "/partners/integrations" }
+];
+
+const onboarding = [
+  {
+    title: "1. Discovery & data audit",
+    body: "Review carrier contracts, surcharges, routing rules, file formats, and tech stack to map your current state."
+  },
+  {
+    title: "2. Configuration & integrations",
+    body: "TUCO configures carriers, automations, and integrations with ERPs, WMS, ecommerce, and customer systems."
+  },
+  {
+    title: "3. Training & pilot",
+    body: "Sandbox sessions rehearse day-to-day workflows while TUCO equips operations, commercial, and customer teams."
+  },
+  {
+    title: "4. Go-live & optimisation",
+    body: "Parallel run then go-live with TUCO on deck. Continuous reviews ensure Freightmate evolves with your freight mix."
+  }
+];
+
+useSEO({
+  title: "Freightmate Platform - TUCO Logistics",
+  description: "Explore how Freightmate centralises quoting, booking, tracking, and analytics for Australian freight networks."
+});
+</script>

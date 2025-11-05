@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-tuco-navy: #0b1b2b;
+  --color-tuco-blue: #1e3a8a;
+  --color-tuco-sky: #e8eef7;
+  --color-tuco-ink: #0f172a;
+  --color-tuco-slate: #475569;
+  --color-tuco-card: #ffffff;
+  --color-tuco-line: #e2e8f0;
+}
+
+body {
+  @apply min-h-screen bg-[var(--color-tuco-sky)] font-sans text-[var(--color-tuco-ink)] antialiased;
+}
+
+#app {
+  @apply min-h-screen bg-transparent;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-semibold text-[var(--color-tuco-navy)] tracking-tight;
+}
+
+p {
+  @apply leading-relaxed text-[var(--color-tuco-slate)];
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 rounded-full bg-[var(--color-tuco-navy)] px-5 py-3 text-sm font-semibold text-white transition duration-200 hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-tuco-blue)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-tuco-card)];
+}
+
+.btn-ghost {
+  @apply inline-flex items-center gap-2 rounded-full border border-[var(--color-tuco-line)] bg-transparent px-5 py-3 text-sm font-semibold text-[var(--color-tuco-navy)] transition duration-200 hover:bg-white/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-tuco-blue)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-tuco-card)];
+}
+
+.tuco-card {
+  @apply rounded-2xl border border-[var(--color-tuco-line)] bg-[var(--color-tuco-card)] shadow-card-soft transition duration-200 hover:shadow-card-lg;
+}

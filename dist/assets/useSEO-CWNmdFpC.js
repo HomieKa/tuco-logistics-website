@@ -1,0 +1,1 @@
+import{E as o}from"./index-s4wA7Uap.js";function p({title:t,description:e}){o({title:t,meta:[{name:"description",content:e},{property:"og:title",content:t},{property:"og:description",content:e},{property:"og:type",content:"website"}]})}export{p as u};

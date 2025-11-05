@@ -1,0 +1,131 @@
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+
+const routes: RouteRecordRaw[] = [
+  {
+    path: "/",
+    name: "home",
+    component: () => import("@/views/HomePage.vue"),
+    meta: { title: "TUCO Logistics - Hassle-Free Freight Management" }
+  },
+  {
+    path: "/about-us",
+    name: "about-us",
+    component: () => import("@/views/company/AboutPage.vue"),
+    meta: { title: "About Us - TUCO Logistics" }
+  },
+  {
+    path: "/services",
+    name: "services",
+    component: () => import("@/views/services/ServicesPage.vue"),
+    meta: { title: "Services - TUCO Logistics" }
+  },
+  {
+    path: "/track",
+    name: "track",
+    component: () => import("@/pages/track.vue"),
+    meta: { title: "Freight Tracking | TUCO" }
+  },
+  {
+    path: "/privacy",
+    name: "privacy",
+    component: () => import("@/pages/privacy.vue"),
+    meta: { title: "Privacy Policy | TUCO" }
+  },
+  {
+    path: "/terms",
+    name: "terms",
+    component: () => import("@/pages/terms.vue"),
+    meta: { title: "Terms & Conditions | TUCO" }
+  },
+  {
+    path: "/services/freight-management",
+    redirect: { path: "/services", hash: "#freight-management" }
+  },
+  {
+    path: "/services/tracking-reporting",
+    redirect: { path: "/services", hash: "#tracking-reporting" }
+  },
+  {
+    path: "/services/integration-automation",
+    redirect: { path: "/services", hash: "#integration-automation" }
+  },
+  {
+    path: "/technology",
+    name: "technology",
+    component: () => import("@/views/Technology.vue"),
+    meta: { title: "Freightmate Platform - TUCO Logistics" }
+  },
+  {
+    path: "/industries/enterprise",
+    name: "industries-enterprise",
+    component: () => import("@/views/industries/EnterprisePage.vue"),
+    meta: { title: "Enterprise Logistics - TUCO" }
+  },
+  {
+    path: "/industries/b2b",
+    name: "industries-b2b",
+    component: () => import("@/views/industries/B2BPage.vue"),
+    meta: { title: "B2B Solutions - TUCO" }
+  },
+  {
+    path: "/industries/ecommerce",
+    name: "industries-ecommerce",
+    component: () => import("@/views/industries/EcommercePage.vue"),
+    meta: { title: "Ecommerce Logistics - TUCO" }
+  },
+  {
+    path: "/our-difference",
+    name: "our-difference",
+    component: () => import("@/views/company/OurDifference.vue"),
+    meta: { title: "Why Choose TUCO - TUCO Logistics" }
+  },
+  {
+    path: "/resources/insights",
+    name: "resources-insights",
+    component: () => import("@/views/resources/InsightsPage.vue"),
+    meta: { title: "Insights - TUCO Logistics" }
+  },
+  {
+    path: "/resources/blog/:slug",
+    name: "resources-blog-post",
+    component: () => import("@/views/resources/BlogPost.vue"),
+    meta: { title: "TUCO Logistics Blog" }
+  },
+  {
+    path: "/faq",
+    name: "faq",
+    component: () => import("@/views/resources/FAQPage.vue"),
+    meta: { title: "FAQ - TUCO Logistics" }
+  },
+  {
+    path: "/contact",
+    name: "contact",
+    component: () => import("@/views/ContactPage.vue"),
+    meta: { title: "Contact Us - TUCO Logistics" }
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: { name: "home" }
+  }
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+  scrollBehavior(to, _from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    if (to.hash) {
+      return false;
+    }
+    return { top: 0, behavior: "smooth" };
+  }
+});
+
+router.beforeEach((to, _from, next) => {
+  document.title = (to.meta.title as string) || "TUCO Logistics";
+  next();
+});
+
+export default router;

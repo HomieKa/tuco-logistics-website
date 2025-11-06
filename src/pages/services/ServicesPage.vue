@@ -1,11 +1,21 @@
 <template>
   <div class="bg-[var(--color-tuco-sky)]/20">
-    <div class="sticky top-20 z-30 border-b border-[var(--color-tuco-line)] bg-[var(--color-tuco-card)]/95 backdrop-blur">
+    <div
+      class="sticky top-20 z-30 border-b border-[var(--color-tuco-line)] bg-[var(--color-tuco-card)]/95 backdrop-blur"
+    >
       <div class="mx-auto max-w-7xl px-4 py-4 md:px-6 lg:px-8">
-        <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+        <div
+          class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between"
+        >
           <div>
-            <h1 class="text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl">Our Services</h1>
-            <p class="mt-1 text-sm text-[var(--color-tuco-slate)]">Comprehensive freight management built around your business.</p>
+            <h1
+              class="text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl"
+            >
+              Our Services
+            </h1>
+            <p class="mt-1 text-sm text-[var(--color-tuco-slate)]">
+              Comprehensive freight management built around your business.
+            </p>
           </div>
           <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <button
@@ -15,7 +25,11 @@
               :aria-pressed="activeSection === section.id"
               @click="scrollToSection(section.id)"
               class="rounded-2xl border border-[var(--color-tuco-line)] bg-white px-4 py-3 text-left text-sm font-semibold text-[var(--color-tuco-navy)] shadow-sm transition hover:-translate-y-1 hover:shadow-lg/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-tuco-blue)] focus-visible:ring-offset-2"
-              :class="activeSection === section.id ? 'border-[var(--color-tuco-blue)] bg-[var(--color-tuco-blue)]/10' : ''"
+              :class="
+                activeSection === section.id
+                  ? 'border-[var(--color-tuco-blue)] bg-[var(--color-tuco-blue)]/10'
+                  : ''
+              "
             >
               {{ section.label }}
             </button>
@@ -26,15 +40,32 @@
 
     <main class="flex flex-col">
       <!-- Freight Management -->
-      <section id="freight-management" aria-labelledby="freight-management-title" class="py-0">
+      <section
+        id="freight-management"
+        aria-labelledby="freight-management-title"
+        class="py-0"
+      >
         <div class="relative left-1/2 w-screen -translate-x-1/2 bg-[#f3f5fb]">
-          <div class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32">
-            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]">Freight management</p>
-            <h2 id="freight-management-title" class="mt-2 text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl">
+          <div
+            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32"
+          >
+            <p
+              class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]"
+            >
+              Freight management
+            </p>
+            <h2
+              id="freight-management-title"
+              class="mt-2 text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl"
+            >
               Freight management
             </h2>
-            <p class="mt-4 text-[var(--color-tuco-slate)] leading-relaxed md:text-lg">
-              From dispatch to delivery, TUCO manages your end-to-end freight operation with precision, covering allocation, live tracking, and performance optimisation.
+            <p
+              class="mt-4 text-[var(--color-tuco-slate)] leading-relaxed md:text-lg"
+            >
+              From dispatch to delivery, TUCO manages your end-to-end freight
+              operation with precision, covering allocation, live tracking, and
+              performance optimisation.
             </p>
 
             <div class="mt-10 flex flex-col gap-10 lg:flex-row lg:items-center">
@@ -45,10 +76,20 @@
                     :key="item.title"
                     class="flex items-start gap-4"
                   >
-                    <span class="mt-1 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--color-tuco-blue)]" />
+                    <span
+                      class="mt-1 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--color-tuco-blue)]"
+                    />
                     <div class="space-y-1">
-                      <h3 class="text-base font-semibold text-[var(--color-tuco-navy)]">{{ item.title }}</h3>
-                      <p class="text-sm text-[var(--color-tuco-slate)] leading-relaxed">{{ item.description }}</p>
+                      <h3
+                        class="text-base font-semibold text-[var(--color-tuco-navy)]"
+                      >
+                        {{ item.title }}
+                      </h3>
+                      <p
+                        class="text-sm text-[var(--color-tuco-slate)] leading-relaxed"
+                      >
+                        {{ item.description }}
+                      </p>
                     </div>
                   </article>
                 </div>
@@ -65,9 +106,12 @@
             </div>
 
             <div class="mt-12">
-              <h3 class="text-lg font-semibold text-[var(--color-tuco-navy)]">Chain of Responsibility</h3>
+              <h3 class="text-lg font-semibold text-[var(--color-tuco-navy)]">
+                Chain of Responsibility
+              </h3>
               <p class="mt-2 text-sm text-[var(--color-tuco-slate)]">
-                We embed safety, governance, and accountability across your supply chain so every shipment travels compliantly.
+                We embed safety, governance, and accountability across your
+                supply chain so every shipment travels compliantly.
               </p>
               <div class="mt-6 grid gap-4 sm:grid-cols-3">
                 <article
@@ -77,8 +121,16 @@
                 >
                   <div class="flex flex-1 flex-col gap-2 p-5">
                     <item.icon class="h-6 w-6 text-[var(--color-tuco-blue)]" />
-                    <h4 class="text-sm font-semibold text-[var(--color-tuco-navy)]">{{ item.title }}</h4>
-                    <p class="text-xs text-[var(--color-tuco-slate)] leading-relaxed">{{ item.description }}</p>
+                    <h4
+                      class="text-sm font-semibold text-[var(--color-tuco-navy)]"
+                    >
+                      {{ item.title }}
+                    </h4>
+                    <p
+                      class="text-xs text-[var(--color-tuco-slate)] leading-relaxed"
+                    >
+                      {{ item.description }}
+                    </p>
                   </div>
                 </article>
               </div>
@@ -88,18 +140,36 @@
       </section>
 
       <!-- Tracking and Reporting -->
-      <section id="tracking-reporting" aria-labelledby="tracking-reporting-title" class="py-0">
+      <section
+        id="tracking-reporting"
+        aria-labelledby="tracking-reporting-title"
+        class="py-0"
+      >
         <div class="relative left-1/2 w-screen -translate-x-1/2 bg-[#f7f9fd]">
-          <div class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32">
-            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]">Tracking & Reporting</p>
-            <h2 id="tracking-reporting-title" class="mt-2 text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl">
+          <div
+            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32"
+          >
+            <p
+              class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]"
+            >
+              Tracking & Reporting
+            </p>
+            <h2
+              id="tracking-reporting-title"
+              class="mt-2 text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl"
+            >
               Tracking and reporting
             </h2>
-            <p class="mt-4 text-[var(--color-tuco-slate)] leading-relaxed md:text-lg">
-              Real-time visibility and reporting aligned to your business priorities.
+            <p
+              class="mt-4 text-[var(--color-tuco-slate)] leading-relaxed md:text-lg"
+            >
+              Real-time visibility and reporting aligned to your business
+              priorities.
             </p>
 
-            <div class="mt-10 flex flex-col gap-10 lg:flex-row-reverse lg:items-center">
+            <div
+              class="mt-10 flex flex-col gap-10 lg:flex-row-reverse lg:items-center"
+            >
               <div class="flex-1">
                 <div class="grid gap-6 sm:grid-cols-2">
                   <article
@@ -107,10 +177,20 @@
                     :key="item.title"
                     class="flex items-start gap-4"
                   >
-                    <span class="mt-1 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--color-tuco-blue)]" />
+                    <span
+                      class="mt-1 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--color-tuco-blue)]"
+                    />
                     <div class="space-y-1">
-                      <h3 class="text-base font-semibold text-[var(--color-tuco-navy)]">{{ item.title }}</h3>
-                      <p class="text-sm text-[var(--color-tuco-slate)] leading-relaxed">{{ item.description }}</p>
+                      <h3
+                        class="text-base font-semibold text-[var(--color-tuco-navy)]"
+                      >
+                        {{ item.title }}
+                      </h3>
+                      <p
+                        class="text-sm text-[var(--color-tuco-slate)] leading-relaxed"
+                      >
+                        {{ item.description }}
+                      </p>
                     </div>
                   </article>
                 </div>
@@ -130,15 +210,31 @@
       </section>
 
       <!-- Managed Services -->
-      <section id="managed-services" aria-labelledby="managed-services-title" class="py-0">
+      <section
+        id="managed-services"
+        aria-labelledby="managed-services-title"
+        class="py-0"
+      >
         <div class="relative left-1/2 w-screen -translate-x-1/2 bg-[#f3f5fb]">
-          <div class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32">
-            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]">Managed services</p>
-            <h2 id="managed-services-title" class="mt-2 text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl">
+          <div
+            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32"
+          >
+            <p
+              class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]"
+            >
+              Managed services
+            </p>
+            <h2
+              id="managed-services-title"
+              class="mt-2 text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl"
+            >
               Managed services
             </h2>
-            <p class="mt-4 text-[var(--color-tuco-slate)] leading-relaxed md:text-lg">
-              Bring your own carrier accounts and leverage TUCO's platform, processes, and commercial oversight.
+            <p
+              class="mt-4 text-[var(--color-tuco-slate)] leading-relaxed md:text-lg"
+            >
+              Bring your own carrier accounts and leverage TUCO's platform,
+              processes, and commercial oversight.
             </p>
 
             <div class="mt-10 flex flex-col gap-10 lg:flex-row lg:items-center">
@@ -149,10 +245,20 @@
                     :key="item.title"
                     class="flex items-start gap-4"
                   >
-                    <span class="mt-1 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--color-tuco-blue)]" />
+                    <span
+                      class="mt-1 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--color-tuco-blue)]"
+                    />
                     <div class="space-y-1">
-                      <h3 class="text-base font-semibold text-[var(--color-tuco-navy)]">{{ item.title }}</h3>
-                      <p class="text-sm text-[var(--color-tuco-slate)] leading-relaxed">{{ item.description }}</p>
+                      <h3
+                        class="text-base font-semibold text-[var(--color-tuco-navy)]"
+                      >
+                        {{ item.title }}
+                      </h3>
+                      <p
+                        class="text-sm text-[var(--color-tuco-slate)] leading-relaxed"
+                      >
+                        {{ item.description }}
+                      </p>
                     </div>
                   </article>
                 </div>
@@ -172,18 +278,36 @@
       </section>
 
       <!-- Warehousing -->
-      <section id="warehousing" aria-labelledby="warehousing-title" class="py-0">
+      <section
+        id="warehousing"
+        aria-labelledby="warehousing-title"
+        class="py-0"
+      >
         <div class="relative left-1/2 w-screen -translate-x-1/2 bg-[#f7f9fd]">
-          <div class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32">
-            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]">Warehousing</p>
-            <h2 id="warehousing-title" class="mt-2 text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl">
+          <div
+            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32"
+          >
+            <p
+              class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]"
+            >
+              Warehousing
+            </p>
+            <h2
+              id="warehousing-title"
+              class="mt-2 text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl"
+            >
               Warehousing
             </h2>
-            <p class="mt-4 text-[var(--color-tuco-slate)] leading-relaxed md:text-lg">
-              TUCO connects you with national 3PL partners so inventory stays visible, orders move fast, and overflow capacity is always ready.
+            <p
+              class="mt-4 text-[var(--color-tuco-slate)] leading-relaxed md:text-lg"
+            >
+              TUCO connects you with national 3PL partners so inventory stays
+              visible, orders move fast, and overflow capacity is always ready.
             </p>
 
-            <div class="mt-10 flex flex-col gap-10 lg:flex-row-reverse lg:items-center">
+            <div
+              class="mt-10 flex flex-col gap-10 lg:flex-row-reverse lg:items-center"
+            >
               <div class="flex-1">
                 <div class="mx-auto max-w-xl">
                   <img
@@ -200,10 +324,20 @@
                     :key="service.title"
                     class="flex items-start gap-4"
                   >
-                    <span class="mt-1 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--color-tuco-blue)]" />
+                    <span
+                      class="mt-1 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--color-tuco-blue)]"
+                    />
                     <div class="space-y-1">
-                      <p class="text-base font-semibold text-[var(--color-tuco-navy)]">{{ service.title }}</p>
-                      <p class="text-sm text-[var(--color-tuco-slate)] leading-relaxed">{{ service.description }}</p>
+                      <p
+                        class="text-base font-semibold text-[var(--color-tuco-navy)]"
+                      >
+                        {{ service.title }}
+                      </p>
+                      <p
+                        class="text-sm text-[var(--color-tuco-slate)] leading-relaxed"
+                      >
+                        {{ service.description }}
+                      </p>
                     </div>
                   </article>
                 </div>
@@ -214,15 +348,31 @@
       </section>
 
       <!-- Managed Partners -->
-      <section id="managed-partners" aria-labelledby="managed-partners-title" class="py-0">
+      <section
+        id="managed-partners"
+        aria-labelledby="managed-partners-title"
+        class="py-0"
+      >
         <div class="relative left-1/2 w-screen -translate-x-1/2 bg-[#f3f5fb]">
-          <div class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32">
-            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]">Managed partners</p>
-            <h2 id="managed-partners-title" class="mt-2 text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl">
+          <div
+            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32"
+          >
+            <p
+              class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]"
+            >
+              Managed partners
+            </p>
+            <h2
+              id="managed-partners-title"
+              class="mt-2 text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl"
+            >
               Managed partners
             </h2>
-            <p class="mt-4 text-[var(--color-tuco-slate)] leading-relaxed md:text-lg">
-              Our network spans road, rail, air, and sea, with specialist partners for complex movements.
+            <p
+              class="mt-4 text-[var(--color-tuco-slate)] leading-relaxed md:text-lg"
+            >
+              Our network spans road, rail, air, and sea, with specialist
+              partners for complex movements.
             </p>
 
             <!-- Transport modes -->
@@ -232,18 +382,34 @@
                 :key="mode.title"
                 class="flex h-full flex-col overflow-hidden rounded-xl border border-[var(--color-tuco-line)] bg-white shadow-lg/5 transition hover:-translate-y-1 hover:shadow-card-lg"
               >
-                <div class="relative aspect-[3/2] w-full bg-[var(--color-tuco-sky)]/30">
-                  <img :src="mode.image" :alt="mode.imageAlt" class="h-full w-full object-contain p-4" />
+                <div
+                  class="relative aspect-[3/2] w-full bg-[var(--color-tuco-sky)]/30"
+                >
+                  <img
+                    :src="mode.image"
+                    :alt="mode.imageAlt"
+                    class="h-full w-full object-contain p-4"
+                  />
                 </div>
                 <div class="flex flex-1 flex-col gap-2 p-4">
-                  <h3 class="text-base font-semibold text-[var(--color-tuco-navy)]">{{ mode.title }}</h3>
-                  <p class="text-sm leading-relaxed text-[var(--color-tuco-slate)]">{{ mode.description }}</p>
+                  <h3
+                    class="text-base font-semibold text-[var(--color-tuco-navy)]"
+                  >
+                    {{ mode.title }}
+                  </h3>
+                  <p
+                    class="text-sm leading-relaxed text-[var(--color-tuco-slate)]"
+                  >
+                    {{ mode.description }}
+                  </p>
                 </div>
               </article>
             </div>
 
             <!-- Carrier logos carousel -->
-            <div class="mt-10 overflow-hidden rounded-3xl border border-[var(--color-tuco-line)] bg-white p-6 shadow-lg/5">
+            <div
+              class="mt-10 overflow-hidden rounded-3xl border border-[var(--color-tuco-line)] bg-white p-6 shadow-lg/5"
+            >
               <div class="relative">
                 <div
                   class="flex gap-12 whitespace-nowrap will-change-transform"
@@ -282,13 +448,26 @@
       <!-- Industries -->
       <section id="industries" aria-labelledby="industries-title" class="py-0">
         <div class="relative left-1/2 w-screen -translate-x-1/2 bg-[#f7f9fd]">
-          <div class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32">
-            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]">Industries</p>
-            <h2 id="industries-title" class="mt-2 text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl">
+          <div
+            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32"
+          >
+            <p
+              class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]"
+            >
+              Industries
+            </p>
+            <h2
+              id="industries-title"
+              class="mt-2 text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl"
+            >
               Industries we support
             </h2>
-            <p class="mt-4 text-[var(--color-tuco-slate)] leading-relaxed md:text-lg">
-              Tailored freight programs for manufacturing, retail, healthcare, and more, built to meet the exact service promises your customers expect.
+            <p
+              class="mt-4 text-[var(--color-tuco-slate)] leading-relaxed md:text-lg"
+            >
+              Tailored freight programs for manufacturing, retail, healthcare,
+              and more, built to meet the exact service promises your customers
+              expect.
             </p>
 
             <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -297,12 +476,26 @@
                 :key="industry.title"
                 class="flex h-full flex-col overflow-hidden rounded-xl border border-[var(--color-tuco-line)] bg-white shadow-lg/5 transition hover:-translate-y-1 hover:shadow-card-lg"
               >
-                <div class="relative aspect-[3/2] w-full bg-[var(--color-tuco-sky)]/30">
-                  <img :src="industry.image" :alt="industry.imageAlt" class="h-full w-full object-contain p-4" />
+                <div
+                  class="relative aspect-[3/2] w-full bg-[var(--color-tuco-sky)]/30"
+                >
+                  <img
+                    :src="industry.image"
+                    :alt="industry.imageAlt"
+                    class="h-full w-full object-contain p-4"
+                  />
                 </div>
                 <div class="flex flex-1 flex-col gap-2 p-4">
-                  <h4 class="text-base font-semibold text-[var(--color-tuco-navy)]">{{ industry.title }}</h4>
-                  <p class="text-sm leading-relaxed text-[var(--color-tuco-slate)]">{{ industry.description }}</p>
+                  <h4
+                    class="text-base font-semibold text-[var(--color-tuco-navy)]"
+                  >
+                    {{ industry.title }}
+                  </h4>
+                  <p
+                    class="text-sm leading-relaxed text-[var(--color-tuco-slate)]"
+                  >
+                    {{ industry.description }}
+                  </p>
                 </div>
               </article>
             </div>
@@ -311,11 +504,22 @@
       </section>
     </main>
 
-    <section class="border-t border-[var(--color-tuco-line)] bg-[var(--color-tuco-card)]/90">
-      <div class="mx-auto flex max-w-7xl flex-col items-start gap-4 px-4 py-12 md:flex-row md:items-center md:justify-between md:px-6 lg:px-8">
+    <section
+      class="border-t border-[var(--color-tuco-line)] bg-[var(--color-tuco-card)]/90"
+    >
+      <div
+        class="mx-auto flex max-w-7xl flex-col items-start gap-4 px-4 py-12 md:flex-row md:items-center md:justify-between md:px-6 lg:px-8"
+      >
         <div>
-          <h2 class="text-2xl font-semibold text-[var(--color-tuco-navy)] md:text-3xl">Ready to build your freight program?</h2>
-          <p class="mt-1 text-sm text-[var(--color-tuco-slate)]">Chat with TUCO specialists to map the right services for your network.</p>
+          <h2
+            class="text-2xl font-semibold text-[var(--color-tuco-navy)] md:text-3xl"
+          >
+            Ready to build your freight program?
+          </h2>
+          <p class="mt-1 text-sm text-[var(--color-tuco-slate)]">
+            Chat with TUCO specialists to map the right services for your
+            network.
+          </p>
         </div>
         <RouterLink
           to="/contact"
@@ -325,12 +529,16 @@
         </RouterLink>
       </div>
     </section>
-
   </div>
 </template>
 
 <script setup lang="ts">
-import { ArrowPathIcon, BoltIcon, CubeTransparentIcon, ShieldCheckIcon } from "@heroicons/vue/24/outline";
+import {
+  ArrowPathIcon,
+  BoltIcon,
+  CubeTransparentIcon,
+  ShieldCheckIcon,
+} from "@heroicons/vue/24/outline";
 import { nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
 import freightManagementArtwork from "@/assets/images/services/freight-ops.svg";
@@ -378,7 +586,7 @@ const sections = [
   { id: "managed-services", label: "Managed services" },
   { id: "warehousing", label: "Warehousing" },
   { id: "managed-partners", label: "Managed partners" },
-  { id: "industries", label: "Industries" }
+  { id: "industries", label: "Industries" },
 ];
 
 const activeSection = ref(sections[0].id);
@@ -395,63 +603,75 @@ let animationFrameId: number | null = null;
 const freightManagementItems = [
   {
     title: "Carrier network design",
-    description: "We design networks that balance speed, cost, and reliability, tailored to your freight profile."
+    description:
+      "We design networks that balance speed, cost, and reliability, tailored to your freight profile.",
   },
   {
     title: "Account management",
-    description: "Your dedicated Internal Account Manager learns your freight profile and service expectations, driving proactive management and alignment."
+    description:
+      "Your dedicated Internal Account Manager learns your freight profile and service expectations, driving proactive management and alignment.",
   },
   {
     title: "Invoice reconciliation",
-    description: "Single, reconciled invoices with errors eliminated up front, saving time and improving transparency."
+    description:
+      "Single, reconciled invoices with errors eliminated up front, saving time and improving transparency.",
   },
   {
     title: "Carrier management",
-    description: "Continuous performance, safety, and compliance oversight across your carrier base."
-  }
+    description:
+      "Continuous performance, safety, and compliance oversight across your carrier base.",
+  },
 ];
-
 
 const trackingItems = [
   {
     title: "Business reviews",
-    description: "Structured review cadence to keep goals, performance, and savings on track."
+    description:
+      "Structured review cadence to keep goals, performance, and savings on track.",
   },
   {
     title: "Proactive reporting (Live sheets)",
-    description: "Live, actionable insights for every consignment to support faster decisions."
+    description:
+      "Live, actionable insights for every consignment to support faster decisions.",
   },
   {
     title: "Power BI - Commercials",
-    description: "Commercial dashboards for rate analysis, DIFOT trends, lane profitability, and savings opportunities."
+    description:
+      "Commercial dashboards for rate analysis, DIFOT trends, lane profitability, and savings opportunities.",
   },
   {
     title: "Freightmate dashboard",
-    description: "Centralised bookings, tracking, analytics, and alerts, keeping your freight in one place."
-  }
+    description:
+      "Centralised bookings, tracking, analytics, and alerts, keeping your freight in one place.",
+  },
 ];
 
 const managedServicesItems = [
   {
     title: "Bring your own account",
-    description: "Keep your carrier agreements and benefit from TUCO's platform, analytics, and governance."
+    description:
+      "Keep your carrier agreements and benefit from TUCO's platform, analytics, and governance.",
   },
   {
     title: "Invoice reconciliation",
-    description: "Automated checks ensure every charge aligns with agreed rates and surcharges."
+    description:
+      "Automated checks ensure every charge aligns with agreed rates and surcharges.",
   },
   {
     title: "Carrier management",
-    description: "Performance scorecards, safety reviews, and compliance programs guided by TUCO experts."
+    description:
+      "Performance scorecards, safety reviews, and compliance programs guided by TUCO experts.",
   },
   {
     title: "Ops management",
-    description: "TUCO operations support day-to-day execution with consistent response times."
+    description:
+      "TUCO operations support day-to-day execution with consistent response times.",
   },
   {
     title: "Commercial reviews",
-    description: "Regular commercial analysis highlights optimisation opportunities and savings."
-  }
+    description:
+      "Regular commercial analysis highlights optimisation opportunities and savings.",
+  },
 ];
 
 const warehouseHeroImage = warehouseHeroArtwork;
@@ -459,28 +679,32 @@ const warehouseHeroImage = warehouseHeroArtwork;
 const warehousingServices = [
   {
     title: "Ambient & pallet storage",
-    description: "Secure ambient, chilled, and carton storage with flexible footprint across national 3PL partners.",
+    description:
+      "Secure ambient, chilled, and carton storage with flexible footprint across national 3PL partners.",
     icon: storageIllustration,
-    iconAlt: "Warehouse storage illustration"
+    iconAlt: "Warehouse storage illustration",
   },
   {
     title: "Pick, pack & eCommerce fulfilment",
-    description: "Order pick, pack, and dispatch services aligned to your carrier network and customer SLAs.",
+    description:
+      "Order pick, pack, and dispatch services aligned to your carrier network and customer SLAs.",
     icon: pickPackIllustration,
-    iconAlt: "Pick and pack illustration"
+    iconAlt: "Pick and pack illustration",
   },
   {
     title: "Container devanning & cross-dock",
-    description: "Rapid unload, palletisation, and same-day cross-dock to keep imports moving into final mile.",
+    description:
+      "Rapid unload, palletisation, and same-day cross-dock to keep imports moving into final mile.",
     icon: containerIllustration,
-    iconAlt: "Container handling illustration"
+    iconAlt: "Container handling illustration",
   },
   {
     title: "Project & overflow capacity",
-    description: "Short or long-term warehousing programs that flex with promotions, seasonality, and growth.",
+    description:
+      "Short or long-term warehousing programs that flex with promotions, seasonality, and growth.",
     icon: scalingIllustration,
-    iconAlt: "Scalable warehousing illustration"
-  }
+    iconAlt: "Scalable warehousing illustration",
+  },
 ];
 
 const transportCards = [
@@ -488,26 +712,30 @@ const transportCards = [
     title: "Road freight",
     image: roadImage,
     imageAlt: "Linehaul trucks preparing for departure",
-    description: "National metro, regional, and long-haul programs delivered with TUCO performance governance."
+    description:
+      "National metro, regional, and long-haul programs delivered with TUCO performance governance.",
   },
   {
     title: "Rail freight",
     image: railImage,
     imageAlt: "Intermodal freight train departing terminal",
-    description: "Port and inland intermodal links that keep freight on schedule while trimming cost."
+    description:
+      "Port and inland intermodal links that keep freight on schedule while trimming cost.",
   },
   {
     title: "Air freight",
     image: airImage,
     imageAlt: "Freight aircraft loading on tarmac",
-    description: "Priority uplift for urgent freight with TUCO operators watching every milestone."
+    description:
+      "Priority uplift for urgent freight with TUCO operators watching every milestone.",
   },
   {
     title: "Sea freight",
     image: seaImage,
     imageAlt: "Container vessel docked for loading",
-    description: "Customs-led FCL and LCL programs that keep long-haul supply chains compliant and on-plan."
-  }
+    description:
+      "Customs-led FCL and LCL programs that keep long-haul supply chains compliant and on-plan.",
+  },
 ];
 
 const industryCards = [
@@ -515,83 +743,96 @@ const industryCards = [
     title: "FMCG",
     image: fmcgImage,
     imageAlt: "Fast-moving consumer goods logistics illustration",
-    description: "Shelf-ready promotions and rapid replenishment flows stay on time, even at peak."
+    description:
+      "Shelf-ready promotions and rapid replenishment flows stay on time, even at peak.",
   },
   {
     title: "Retail",
     image: retailImage,
     imageAlt: "Retail logistics illustration",
-    description: "Omnichannel fulfilment connects stores, warehouses, and last mile into one branded experience."
+    description:
+      "Omnichannel fulfilment connects stores, warehouses, and last mile into one branded experience.",
   },
   {
     title: "Industrial",
     image: manufacturingImage,
     imageAlt: "Industrial logistics illustration",
-    description: "Precision inbound and outbound movements meet compliance and safety on every site."
+    description:
+      "Precision inbound and outbound movements meet compliance and safety on every site.",
   },
   {
     title: "Mining",
     image: miningImage,
     imageAlt: "Mining logistics illustration",
-    description: "Remote operations stay supplied through TUCO-managed linehaul, airbridge, and DG compliance."
+    description:
+      "Remote operations stay supplied through TUCO-managed linehaul, airbridge, and DG compliance.",
   },
   {
     title: "Healthcare",
     image: healthcareImage,
     imageAlt: "Healthcare logistics illustration",
-    description: "Validated cold-chain networks protect every critical order from warehouse to ward."
+    description:
+      "Validated cold-chain networks protect every critical order from warehouse to ward.",
   },
   {
     title: "Building",
     image: buildingImage,
     imageAlt: "Building logistics illustration",
-    description: "High-volume building materials arrive sequenced to site readiness with TUCO oversight."
+    description:
+      "High-volume building materials arrive sequenced to site readiness with TUCO oversight.",
   },
   {
     title: "Technology",
     image: technologyImage,
     imageAlt: "Technology logistics illustration",
-    description: "High-value devices move securely with white-glove execution and reverse logistics built in."
+    description:
+      "High-value devices move securely with white-glove execution and reverse logistics built in.",
   },
   {
     title: "Construction",
     image: constructionImage,
     imageAlt: "Construction logistics illustration",
-    description: "Major projects stay on schedule with milestone-controlled staging, cranage, and delivery."
-  }
+    description:
+      "Major projects stay on schedule with milestone-controlled staging, cranage, and delivery.",
+  },
 ];
 
 const corItems = [
   {
     title: "Safety governance",
-    description: "Policies and audits aligned to Chain of Responsibility requirements.",
-    icon: ShieldCheckIcon
+    description:
+      "Policies and audits aligned to Chain of Responsibility requirements.",
+    icon: ShieldCheckIcon,
   },
   {
     title: "Driver compliance",
-    description: "Carrier vetting, accreditation, and fatigue management oversight.",
-    icon: BoltIcon
+    description:
+      "Carrier vetting, accreditation, and fatigue management oversight.",
+    icon: BoltIcon,
   },
   {
     title: "Load integrity",
     description: "Checks on load restraint, packaging, and documentation.",
-    icon: CubeTransparentIcon
+    icon: CubeTransparentIcon,
   },
   {
     title: "Incident reporting",
-    description: "Structured escalation and action tracking for on-road events.",
-    icon: ArrowPathIcon
+    description:
+      "Structured escalation and action tracking for on-road events.",
+    icon: ArrowPathIcon,
   },
   {
     title: "Training & onboarding",
-    description: "Support for awareness programs across shipper and carrier teams.",
-    icon: ShieldCheckIcon
+    description:
+      "Support for awareness programs across shipper and carrier teams.",
+    icon: ShieldCheckIcon,
   },
   {
     title: "Data visibility",
-    description: "Compliance dashboards highlighting risks and corrective measures.",
-    icon: BoltIcon
-  }
+    description:
+      "Compliance dashboards highlighting risks and corrective measures.",
+    icon: BoltIcon,
+  },
 ];
 
 const carriers = [
@@ -609,7 +850,7 @@ const carriers = [
   { name: "Northline", logo: carrierNorthline },
   { name: "Xpress Freight Management", logo: carrierXpress },
   { name: "TasConnect", logo: carrierTasConnect },
-  { name: "Sadleirs", logo: carrierSadleirs }
+  { name: "Sadleirs", logo: carrierSadleirs },
 ];
 
 const duplicatedCarriers = [...carriers, ...carriers];
@@ -682,8 +923,8 @@ function setupObserver() {
     },
     {
       rootMargin: "-45% 0px -45% 0px",
-      threshold: [0.25, 0.5, 0.75]
-    }
+      threshold: [0.25, 0.5, 0.75],
+    },
   );
   sections.forEach((section) => {
     const el = document.getElementById(section.id);
@@ -719,7 +960,7 @@ watch(
     if (hash && hash !== oldHash) {
       syncHashScroll();
     }
-  }
+  },
 );
 
 function handleLogoLoad() {
@@ -737,7 +978,6 @@ function handleCarrierError(logo: string) {
 function isLogoBroken(logo: string) {
   return brokenCarrierLogos.value.has(logo);
 }
-
 </script>
 
 <style scoped>
@@ -755,5 +995,4 @@ function isLogoBroken(logo: string) {
 .motion-safe\:animate-fadeUp {
   animation: fadeUp 0.5s ease-out both;
 }
-
 </style>

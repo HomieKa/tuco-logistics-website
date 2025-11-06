@@ -10,7 +10,8 @@
     <CallToAction>
       <template #title>Ready to transform your freight network?</template>
       <template #description>
-        Join ambitious Australian businesses partnering with TUCO to deliver transparency, savings, and effortless execution.
+        Join ambitious Australian businesses partnering with TUCO to deliver
+        transparency, savings, and effortless execution.
       </template>
       <template #actions>
         <Button variant="secondary" size="lg" to="/contact">Get started</Button>
@@ -32,15 +33,17 @@ import { useSEO } from "@/composables/useSEO";
 
 useSEO({
   title: "TUCO Logistics - Hassle-Free Freight Management",
-  description: "Smart freight management for Australian businesses. TUCO delivers visibility, savings, and proactive support."
+  description:
+    "Smart freight management for Australian businesses. TUCO delivers visibility, savings, and proactive support.",
 });
-
 </script>
 
 <style scoped>
 .fade-slide-enter-active,
 .fade-slide-leave-active {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 .fade-slide-enter-from,
 .fade-slide-leave-to {
@@ -48,4 +51,3 @@ useSEO({
   transform: translateY(12px);
 }
 </style>
-

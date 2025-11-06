@@ -5,108 +5,108 @@ const routes: RouteRecordRaw[] = [
     path: "/",
     name: "home",
     component: () => import("@/pages/home/HomePage.vue"),
-    meta: { title: "TUCO Logistics - Hassle-Free Freight Management" }
+    meta: { title: "TUCO Logistics - Hassle-Free Freight Management" },
   },
   {
     path: "/about-us",
     name: "about-us",
     component: () => import("@/pages/company/AboutPage.vue"),
-    meta: { title: "About Us - TUCO Logistics" }
+    meta: { title: "About Us - TUCO Logistics" },
   },
   {
     path: "/services",
     name: "services",
     component: () => import("@/pages/services/ServicesPage.vue"),
-    meta: { title: "Services - TUCO Logistics" }
+    meta: { title: "Services - TUCO Logistics" },
   },
   {
     path: "/track",
     name: "track",
     component: () => import("@/pages/support/TrackPage.vue"),
-    meta: { title: "Freight Tracking | TUCO" }
+    meta: { title: "Freight Tracking | TUCO" },
   },
   {
     path: "/privacy",
     name: "privacy",
     component: () => import("@/pages/legal/PrivacyPage.vue"),
-    meta: { title: "Privacy Policy | TUCO" }
+    meta: { title: "Privacy Policy | TUCO" },
   },
   {
     path: "/terms",
     name: "terms",
     component: () => import("@/pages/legal/TermsPage.vue"),
-    meta: { title: "Terms & Conditions | TUCO" }
+    meta: { title: "Terms & Conditions | TUCO" },
   },
   {
     path: "/services/freight-management",
-    redirect: { path: "/services", hash: "#freight-management" }
+    redirect: { path: "/services", hash: "#freight-management" },
   },
   {
     path: "/services/tracking-reporting",
-    redirect: { path: "/services", hash: "#tracking-reporting" }
+    redirect: { path: "/services", hash: "#tracking-reporting" },
   },
   {
     path: "/services/integration-automation",
-    redirect: { path: "/services", hash: "#integration-automation" }
+    redirect: { path: "/services", hash: "#integration-automation" },
   },
   {
     path: "/technology",
     name: "technology",
     component: () => import("@/pages/technology/TechnologyPage.vue"),
-    meta: { title: "Freightmate Platform - TUCO Logistics" }
+    meta: { title: "Freightmate Platform - TUCO Logistics" },
   },
   {
     path: "/industries/enterprise",
     name: "industries-enterprise",
     component: () => import("@/pages/industries/EnterprisePage.vue"),
-    meta: { title: "Enterprise Logistics - TUCO" }
+    meta: { title: "Enterprise Logistics - TUCO" },
   },
   {
     path: "/industries/b2b",
     name: "industries-b2b",
     component: () => import("@/pages/industries/B2BPage.vue"),
-    meta: { title: "B2B Solutions - TUCO" }
+    meta: { title: "B2B Solutions - TUCO" },
   },
   {
     path: "/industries/ecommerce",
     name: "industries-ecommerce",
     component: () => import("@/pages/industries/EcommercePage.vue"),
-    meta: { title: "Ecommerce Logistics - TUCO" }
+    meta: { title: "Ecommerce Logistics - TUCO" },
   },
   {
     path: "/our-difference",
     name: "our-difference",
     component: () => import("@/pages/company/OurDifferencePage.vue"),
-    meta: { title: "Why Choose TUCO - TUCO Logistics" }
+    meta: { title: "Why Choose TUCO - TUCO Logistics" },
   },
   {
     path: "/resources/insights",
     name: "resources-insights",
     component: () => import("@/pages/resources/InsightsPage.vue"),
-    meta: { title: "Insights - TUCO Logistics" }
+    meta: { title: "Insights - TUCO Logistics" },
   },
   {
     path: "/resources/blog/:slug",
     name: "resources-blog-post",
     component: () => import("@/pages/resources/BlogPostPage.vue"),
-    meta: { title: "TUCO Logistics Blog" }
+    meta: { title: "TUCO Logistics Blog" },
   },
   {
     path: "/faq",
     name: "faq",
     component: () => import("@/pages/resources/FAQPage.vue"),
-    meta: { title: "FAQ - TUCO Logistics" }
+    meta: { title: "FAQ - TUCO Logistics" },
   },
   {
     path: "/contact",
     name: "contact",
     component: () => import("@/pages/contact/ContactPage.vue"),
-    meta: { title: "Contact Us - TUCO Logistics" }
+    meta: { title: "Contact Us - TUCO Logistics" },
   },
   {
     path: "/:pathMatch(.*)*",
-    redirect: { name: "home" }
-  }
+    redirect: { name: "home" },
+  },
 ];
 
 const router = createRouter({
@@ -120,7 +120,7 @@ const router = createRouter({
       return false;
     }
     return { top: 0, behavior: "smooth" };
-  }
+  },
 });
 
 router.beforeEach((to, _from, next) => {

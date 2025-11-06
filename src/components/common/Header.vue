@@ -38,7 +38,6 @@
             Technology
           </RouterLink>
 
-
           <RouterLink
             to="/faq"
             class="text-sm font-medium transition"
@@ -60,7 +59,11 @@
             target="_blank"
             rel="noopener"
             class="rounded-full px-5 py-2 text-sm font-semibold shadow transition"
-            :class="isScrolled ? 'bg-teal-500 text-white hover:bg-teal-600' : 'border border-[#0c233f] text-[#0c233f] hover:bg-[#0c233f]/5'"
+            :class="
+              isScrolled
+                ? 'bg-teal-500 text-white hover:bg-teal-600'
+                : 'border border-[#0c233f] text-[#0c233f] hover:bg-[#0c233f]/5'
+            "
           >
             Login to Freightmate
           </a>
@@ -68,7 +71,11 @@
           <RouterLink
             to="/track"
             class="rounded-full px-5 py-2 text-sm font-semibold shadow transition"
-            :class="isScrolled ? 'bg-[#38a2ca] text-white hover:bg-[#2d82a2]' : 'border border-[#38a2ca] text-[#38a2ca] hover:bg-[#38a2ca]/10'"
+            :class="
+              isScrolled
+                ? 'bg-[#38a2ca] text-white hover:bg-[#2d82a2]'
+                : 'border border-[#38a2ca] text-[#38a2ca] hover:bg-[#38a2ca]/10'
+            "
           >
             Tracking
           </RouterLink>
@@ -81,11 +88,33 @@
           aria-label="Toggle navigation menu"
           :class="isScrolled ? 'text-white' : 'text-[#0c233f]'"
         >
-          <svg v-if="!mobileMenuOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          <svg
+            v-if="!mobileMenuOpen"
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           </svg>
-          <svg v-else class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 18 6M6 6l12 12" />
+          <svg
+            v-else
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18 18 6M6 6l12 12"
+            />
           </svg>
         </button>
       </div>
@@ -100,11 +129,18 @@
       >
         <div v-if="mobileMenuOpen" class="space-y-4 pb-4 pt-2 lg:hidden">
           <RouterLink
-            v-for="link in [...primaryNav, { label: 'Contact', to: '/contact' }]"
+            v-for="link in [
+              ...primaryNav,
+              { label: 'Contact', to: '/contact' },
+            ]"
             :key="link.to"
             :to="link.to"
             class="block text-sm font-medium transition"
-            :class="isScrolled ? 'text-white hover:text-teal-200' : 'text-[#0c233f] hover:text-teal-500'"
+            :class="
+              isScrolled
+                ? 'text-white hover:text-teal-200'
+                : 'text-[#0c233f] hover:text-teal-500'
+            "
             @click="closeMenu"
           >
             {{ link.label }}
@@ -159,16 +195,16 @@ const route = useRoute();
 
 const primaryNav = [
   { label: "About Us", to: "/about-us" },
-  { label: "Our Difference", to: "/our-difference" }
+  { label: "Our Difference", to: "/our-difference" },
 ];
-
-
 
 const headerClasses = computed(() =>
   [
     "sticky top-0 z-50 transition-all duration-300 backdrop-blur",
-    isScrolled.value ? "bg-[#0c233f]/95 shadow-lg text-white" : "bg-transparent text-[#0c233f]"
-  ].join(" ")
+    isScrolled.value
+      ? "bg-[#0c233f]/95 shadow-lg text-white"
+      : "bg-transparent text-[#0c233f]",
+  ].join(" "),
 );
 
 function handleScroll() {
@@ -196,5 +232,3 @@ onBeforeUnmount(() => {
   window.removeEventListener("scroll", handleScroll);
 });
 </script>
-
-

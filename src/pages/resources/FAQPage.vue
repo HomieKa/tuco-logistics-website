@@ -7,9 +7,7 @@
       <template #eyebrow>FAQ</template>
     </PageHeader>
 
-    <TucoFaqAccordion class="pb-40"/>
-
-
+    <TucoFaqAccordion class="pb-40" />
   </div>
 </template>
 
@@ -20,6 +18,7 @@ import { useSEO } from "@/composables/useSEO";
 
 useSEO({
   title: "FAQ - TUCO Logistics",
-  description: "Answers to the most common questions about TUCO’s services and the Freightmate platform."
+  description:
+    "Answers to the most common questions about TUCO’s services and the Freightmate platform.",
 });
 </script>

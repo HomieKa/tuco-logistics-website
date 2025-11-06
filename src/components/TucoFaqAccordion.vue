@@ -1,7 +1,9 @@
 <template>
   <section :class="sectionClasses">
     <div class="mx-auto w-full max-w-3xl md:max-w-4xl">
-      <h2 class="text-center text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl">
+      <h2
+        class="text-center text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl"
+      >
         Frequently asked questions
       </h2>
 
@@ -29,7 +31,13 @@
               class="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-[var(--color-tuco-sky)] text-[var(--color-tuco-blue)] transition-transform duration-300"
               :class="{ 'rotate-45': activeIndex === index }"
             >
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <svg
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
                 <path d="M12 5v14M5 12h14" stroke-linecap="round" />
               </svg>
             </span>
@@ -43,7 +51,10 @@
             role="region"
             :aria-labelledby="`faq-trigger-${index}`"
           >
-            <div class="faq-panel__content" :class="activeIndex === index ? openPadding : closedPadding">
+            <div
+              class="faq-panel__content"
+              :class="activeIndex === index ? openPadding : closedPadding"
+            >
               <p class="text-[var(--color-tuco-slate)] leading-relaxed">
                 {{ item.a }}
               </p>
@@ -56,50 +67,77 @@
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, onMounted, ref, type ComponentPublicInstance } from "vue";
+import {
+  computed,
+  nextTick,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+  type ComponentPublicInstance,
+} from "vue";
 
 const props = withDefaults(defineProps<{ compact?: boolean }>(), {
-  compact: false
+  compact: false,
 });
 
 const faqs = [
   {
     q: "What is Freightmate and how does it work?",
-    a: "Freightmate is TUCO's cloud freight management system that centralises quoting, booking, tracking, POD, and reporting across multiple Australian carriers—giving you real-time control and end-to-end visibility."
+    a: "Freightmate is TUCO's cloud freight management system that centralises quoting, booking, tracking, POD, and reporting across multiple Australian carriers—giving you real-time control and end-to-end visibility.",
   },
   {
     q: "How is TUCO different from freight brokers or platforms?",
-    a: "We deliver a true end-to-end service: advanced tech + dedicated account management + hands-on carrier oversight. Beyond rates, we manage compliance, invoice vetting, and continuous optimisation—so you get transparent, tailored results."
+    a: "We deliver a true end-to-end service: advanced tech + dedicated account management + hands-on carrier oversight. Beyond rates, we manage compliance, invoice vetting, and continuous optimisation—so you get transparent, tailored results.",
   },
   {
     q: "Can Freightmate integrate with our existing systems?",
-    a: "Yes. We integrate with ERPs, CRMs, and other systems to sync shipment data, automate updates, and streamline processes—reducing manual work while increasing visibility."
+    a: "Yes. We integrate with ERPs, CRMs, and other systems to sync shipment data, automate updates, and streamline processes—reducing manual work while increasing visibility.",
   },
   {
     q: "What kind of cost savings can we expect?",
-    a: "Savings depend on your freight profile, but clients typically see value beyond rates alone—through process efficiency, admin reduction, and performance improvements across the network."
+    a: "Savings depend on your freight profile, but clients typically see value beyond rates alone—through process efficiency, admin reduction, and performance improvements across the network.",
   },
   {
     q: "Who will support us day-to-day?",
-    a: "A dedicated local Account Manager is your single point of contact, backed by TUCO's operations and customer service teams for fast, proactive support."
-  }
+    a: "A dedicated local Account Manager is your single point of contact, backed by TUCO's operations and customer service teams for fast, proactive support.",
+  },
 ];
 
 const activeIndex = ref<number | null>(null);
-const buttonRefs = ref<(HTMLButtonElement | null)[]>(Array(faqs.length).fill(null));
-const contentRefs = ref<(HTMLDivElement | null)[]>(Array(faqs.length).fill(null));
+const buttonRefs = ref<(HTMLButtonElement | null)[]>(
+  Array(faqs.length).fill(null),
+);
+const contentRefs = ref<(HTMLDivElement | null)[]>(
+  Array(faqs.length).fill(null),
+);
 
-const sectionClasses = computed(() => (props.compact ? "pt-10 md:pt-12 pb-0" : "pt-12 md:pt-16 pb-0"));
-const listClasses = computed(() => (props.compact ? "mt-8 space-y-3" : "mt-10 space-y-4 md:space-y-6"));
-const buttonPadding = computed(() => (props.compact ? "p-4 md:p-5" : "p-5 md:p-6"));
-const openPadding = computed(() => (props.compact ? "px-4 py-4 md:px-5 md:py-5" : "px-5 py-5 md:px-6 md:py-6"));
-const closedPadding = computed(() => (props.compact ? "px-4 py-0 md:px-5 md:py-0" : "px-5 py-0 md:px-6 md:py-0"));
+const sectionClasses = computed(() =>
+  props.compact ? "pt-10 md:pt-12 pb-0" : "pt-12 md:pt-16 pb-0",
+);
+const listClasses = computed(() =>
+  props.compact ? "mt-8 space-y-3" : "mt-10 space-y-4 md:space-y-6",
+);
+const buttonPadding = computed(() =>
+  props.compact ? "p-4 md:p-5" : "p-5 md:p-6",
+);
+const openPadding = computed(() =>
+  props.compact ? "px-4 py-4 md:px-5 md:py-5" : "px-5 py-5 md:px-6 md:py-6",
+);
+const closedPadding = computed(() =>
+  props.compact ? "px-4 py-0 md:px-5 md:py-0" : "px-5 py-0 md:px-6 md:py-0",
+);
 
-function setButtonRef(el: Element | ComponentPublicInstance | null, index: number) {
+function setButtonRef(
+  el: Element | ComponentPublicInstance | null,
+  index: number,
+) {
   buttonRefs.value[index] = el instanceof HTMLButtonElement ? el : null;
 }
 
-function setContentRef(el: Element | ComponentPublicInstance | null, index: number) {
+function setContentRef(
+  el: Element | ComponentPublicInstance | null,
+  index: number,
+) {
   contentRefs.value[index] = el instanceof HTMLDivElement ? el : null;
 }
 
@@ -145,7 +183,8 @@ function onKeydown(event: KeyboardEvent, index: number) {
 function updateHeights() {
   contentRefs.value.forEach((panel, index) => {
     if (!panel) return;
-    panel.style.maxHeight = activeIndex.value === index ? `${panel.scrollHeight}px` : "0px";
+    panel.style.maxHeight =
+      activeIndex.value === index ? `${panel.scrollHeight}px` : "0px";
   });
 }
 
@@ -168,7 +207,9 @@ onBeforeUnmount(() => {
 .faq-panel__content {
   opacity: 0;
   transform: translateY(-4px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 .faq-panel.is-open .faq-panel__content {
   opacity: 1;

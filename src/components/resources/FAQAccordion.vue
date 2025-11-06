@@ -5,11 +5,17 @@
       type="button"
       @click="isOpen = !isOpen"
     >
-      <span class="pr-8 text-lg font-semibold text-navy-500 transition group-hover:text-teal-500">
+      <span
+        class="pr-8 text-lg font-semibold text-navy-500 transition group-hover:text-teal-500"
+      >
         {{ question }}
       </span>
       <div
-        :class="isOpen ? 'bg-teal-500 text-white' : 'bg-gray-100 text-gray-600 group-hover:bg-gray-200'"
+        :class="
+          isOpen
+            ? 'bg-teal-500 text-white'
+            : 'bg-gray-100 text-gray-600 group-hover:bg-gray-200'
+        "
         class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full transition"
       >
         <svg
@@ -19,7 +25,12 @@
           stroke="currentColor"
           viewBox="0 0 24 24"
         >
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6" />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 6v12m6-6H6"
+          />
         </svg>
       </div>
     </button>

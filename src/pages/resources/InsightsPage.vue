@@ -24,9 +24,14 @@
 
     <CallToAction>
       <template #title>Need tailored freight advice?</template>
-      <template #description>Book time with TUCO specialists for insights specific to your network.</template>
+      <template #description
+        >Book time with TUCO specialists for insights specific to your
+        network.</template
+      >
       <template #actions>
-        <Button variant="secondary" size="lg" to="/contact">Talk to a consultant</Button>
+        <Button variant="secondary" size="lg" to="/contact"
+          >Talk to a consultant</Button
+        >
       </template>
     </CallToAction>
   </div>
@@ -41,27 +46,31 @@ import { useSEO } from "@/composables/useSEO";
 
 useSEO({
   title: "Insights - TUCO Logistics",
-  description: "Articles, guides, and freight insights from TUCO's logistics experts."
+  description:
+    "Articles, guides, and freight insights from TUCO's logistics experts.",
 });
 
 const articles = [
   {
     title: "The 5 carrier metrics every commercial team should watch",
-    excerpt: "A concise playbook to track carrier performance, costs, and customer experience outcomes.",
+    excerpt:
+      "A concise playbook to track carrier performance, costs, and customer experience outcomes.",
     category: "Carrier Strategy",
-    to: "/resources/blog/carrier-metrics"
+    to: "/resources/blog/carrier-metrics",
   },
   {
     title: "How to automate invoice reconciliation without losing control",
-    excerpt: "Turn error-prone manual work into a streamlined finance process with Freightmate.",
+    excerpt:
+      "Turn error-prone manual work into a streamlined finance process with Freightmate.",
     category: "Finance",
-    to: "/resources/blog/invoice-automation"
+    to: "/resources/blog/invoice-automation",
   },
   {
     title: "Designing a freight program for rapid ecommerce growth",
-    excerpt: "Keep delivery promises tight as order volume scales. Here’s how leading brands do it.",
+    excerpt:
+      "Keep delivery promises tight as order volume scales. Here’s how leading brands do it.",
     category: "Ecommerce",
-    to: "/resources/blog/freight-program-design"
-  }
+    to: "/resources/blog/freight-program-design",
+  },
 ];
 </script>

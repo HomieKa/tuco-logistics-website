@@ -38,8 +38,14 @@ const props = defineProps({
     type: String as () => ButtonSize,
     default: "md"
   },
-  to: String,
-  href: String,
+    to: {
+      type: String,
+      default: undefined
+    },
+    href: {
+      type: String,
+      default: undefined
+    },
   type: {
     type: String,
     default: "button"

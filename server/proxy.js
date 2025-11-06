@@ -104,5 +104,5 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(PORT, () => {
   console.log(`[proxy] listening on http://localhost:${PORT}`);
-  console.log(`[proxy] forwarding /api/track/* → ${API_BASE}${UPSTREAM_PATH}*`);
+  console.log(`[proxy] forwarding /api/track/* -> ${API_BASE}${UPSTREAM_PATH}*`);
 });

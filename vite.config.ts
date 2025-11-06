@@ -7,6 +7,7 @@ const proxyTarget = process.env.VITE_TRACK_PROXY_TARGET || "http://localhost:505
 
 export default defineConfig({
   plugins: [vue()],
+  base: "/tuco-logistics/",
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url))

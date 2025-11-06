@@ -1,40 +1,40 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 
 const routes: RouteRecordRaw[] = [
   {
     path: "/",
     name: "home",
-    component: () => import("@/views/HomePage.vue"),
+    component: () => import("@/pages/home/HomePage.vue"),
     meta: { title: "TUCO Logistics - Hassle-Free Freight Management" }
   },
   {
     path: "/about-us",
     name: "about-us",
-    component: () => import("@/views/company/AboutPage.vue"),
+    component: () => import("@/pages/company/AboutPage.vue"),
     meta: { title: "About Us - TUCO Logistics" }
   },
   {
     path: "/services",
     name: "services",
-    component: () => import("@/views/services/ServicesPage.vue"),
+    component: () => import("@/pages/services/ServicesPage.vue"),
     meta: { title: "Services - TUCO Logistics" }
   },
   {
     path: "/track",
     name: "track",
-    component: () => import("@/pages/track.vue"),
+    component: () => import("@/pages/support/TrackPage.vue"),
     meta: { title: "Freight Tracking | TUCO" }
   },
   {
     path: "/privacy",
     name: "privacy",
-    component: () => import("@/pages/privacy.vue"),
+    component: () => import("@/pages/legal/PrivacyPage.vue"),
     meta: { title: "Privacy Policy | TUCO" }
   },
   {
     path: "/terms",
     name: "terms",
-    component: () => import("@/pages/terms.vue"),
+    component: () => import("@/pages/legal/TermsPage.vue"),
     meta: { title: "Terms & Conditions | TUCO" }
   },
   {
@@ -52,55 +52,55 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/technology",
     name: "technology",
-    component: () => import("@/views/Technology.vue"),
+    component: () => import("@/pages/technology/TechnologyPage.vue"),
     meta: { title: "Freightmate Platform - TUCO Logistics" }
   },
   {
     path: "/industries/enterprise",
     name: "industries-enterprise",
-    component: () => import("@/views/industries/EnterprisePage.vue"),
+    component: () => import("@/pages/industries/EnterprisePage.vue"),
     meta: { title: "Enterprise Logistics - TUCO" }
   },
   {
     path: "/industries/b2b",
     name: "industries-b2b",
-    component: () => import("@/views/industries/B2BPage.vue"),
+    component: () => import("@/pages/industries/B2BPage.vue"),
     meta: { title: "B2B Solutions - TUCO" }
   },
   {
     path: "/industries/ecommerce",
     name: "industries-ecommerce",
-    component: () => import("@/views/industries/EcommercePage.vue"),
+    component: () => import("@/pages/industries/EcommercePage.vue"),
     meta: { title: "Ecommerce Logistics - TUCO" }
   },
   {
     path: "/our-difference",
     name: "our-difference",
-    component: () => import("@/views/company/OurDifference.vue"),
+    component: () => import("@/pages/company/OurDifferencePage.vue"),
     meta: { title: "Why Choose TUCO - TUCO Logistics" }
   },
   {
     path: "/resources/insights",
     name: "resources-insights",
-    component: () => import("@/views/resources/InsightsPage.vue"),
+    component: () => import("@/pages/resources/InsightsPage.vue"),
     meta: { title: "Insights - TUCO Logistics" }
   },
   {
     path: "/resources/blog/:slug",
     name: "resources-blog-post",
-    component: () => import("@/views/resources/BlogPost.vue"),
+    component: () => import("@/pages/resources/BlogPostPage.vue"),
     meta: { title: "TUCO Logistics Blog" }
   },
   {
     path: "/faq",
     name: "faq",
-    component: () => import("@/views/resources/FAQPage.vue"),
+    component: () => import("@/pages/resources/FAQPage.vue"),
     meta: { title: "FAQ - TUCO Logistics" }
   },
   {
     path: "/contact",
     name: "contact",
-    component: () => import("@/views/ContactPage.vue"),
+    component: () => import("@/pages/contact/ContactPage.vue"),
     meta: { title: "Contact Us - TUCO Logistics" }
   },
   {
@@ -110,7 +110,7 @@ const routes: RouteRecordRaw[] = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, _from, savedPosition) {
     if (savedPosition) {

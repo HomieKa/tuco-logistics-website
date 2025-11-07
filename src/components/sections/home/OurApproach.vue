@@ -15,8 +15,8 @@
           </h2>
           <p class="text-base text-[#0a1d35]">
             TUCO blends smart systems with human problem-solvers so every team
-            across your business feels the impact�from freight ops and finance
-            to customer experience.
+            across your business feels the impact from Operations, Finance and 
+            Customer Experience.
           </p>
           <div
             class="rounded-3xl border border-[var(--color-tuco-line)] bg-white/90 p-6 shadow-card-soft"
@@ -96,7 +96,7 @@ const features = [
     badge: "04",
     title: "Finance & reconciliation",
     description:
-      "Consolidated invoices, audit-ready billing, and clear landed cost breakdowns keep finance teams confident.",
+      "Consolidated invoices, audit-ready billing, and clear cost breakdowns keep finance teams confident.",
     image: financeImage,
   },
   {

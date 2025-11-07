@@ -100,7 +100,7 @@
               <dd
                 class="mt-2 text-3xl font-semibold text-[var(--color-tuco-navy)]"
               >
-                6-10 weeks
+                Up to 3 Weeks
               </dd>
               <p class="mt-1 text-sm text-[var(--color-tuco-slate)]">
                 TUCO project squads guide data, integrations, and change

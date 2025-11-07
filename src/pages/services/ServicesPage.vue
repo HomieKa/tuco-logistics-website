@@ -609,7 +609,7 @@ const freightManagementItems = [
   {
     title: "Account management",
     description:
-      "Your dedicated Internal Account Manager learns your freight profile and service expectations, driving proactive management and alignment.",
+      "Your dedicated Account Manager learns your freight profile and service expectations, driving proactive management and alignment.",
   },
   {
     title: "Invoice reconciliation",
@@ -630,7 +630,7 @@ const trackingItems = [
       "Structured review cadence to keep goals, performance, and savings on track.",
   },
   {
-    title: "Proactive reporting (Live sheets)",
+    title: "Proactive reporting",
     description:
       "Live, actionable insights for every consignment to support faster decisions.",
   },

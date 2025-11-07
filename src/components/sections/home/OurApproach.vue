@@ -15,7 +15,7 @@
           </h2>
           <p class="text-base text-[#0a1d35]">
             TUCO blends smart systems with human problem-solvers so every team
-            across your business feels the impact from Operations, Finance and 
+            across your business feels the impact from Operations, Finance and
             Customer Experience.
           </p>
           <div

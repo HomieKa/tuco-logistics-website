@@ -1,12 +1,12 @@
 <template>
   <section class="bg-[#f7f9fd] py-20">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-1">
       <div
-        class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:items-start"
+        class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-center"
       >
         <div class="space-y-6">
           <p
-            class="text-sm font-semibold uppercase tracking-[0.35em] text-sky-500"
+            class="text-sm font-semibold uppercase tracking-[0.35em] text-sky-500 items-center"
           >
             Our Approach
           </p>
@@ -18,28 +18,19 @@
             across your business feels the impact from Operations, Finance and
             Customer Experience.
           </p>
-          <div
-            class="rounded-3xl border border-[var(--color-tuco-line)] bg-white/90 p-6 shadow-card-soft"
-          >
-            <h3 class="text-lg font-semibold text-[#0a1d35]">How we deliver</h3>
-            <p class="mt-3 text-sm text-slate-600">
-              We learn your freight profile, map the right carriers, and run the
-              day-to-day with proactive communication and transparent reporting.
-            </p>
-          </div>
         </div>
 
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
           <article
             v-for="feature in features"
             :key="feature.title"
-            class="group flex h-full flex-col gap-5 rounded-3xl bg-white p-6 shadow-lg transition duration-200 hover:-translate-y-1 hover:shadow-2xl"
+            class="group flex h-full flex-col gap-5 rounded-2xl bg-white p-6 shadow-lg transition duration-200 hover:-translate-y-1 hover:shadow-2xl"
           >
             <figure class="relative overflow-hidden rounded-2xl bg-sky-50/60">
               <img
                 :src="feature.image"
                 :alt="feature.title"
-                class="h-32 w-full object-contain p-6"
+                class="h-32 w-full object-contain p-3"
                 loading="lazy"
               />
               <span
@@ -48,11 +39,11 @@
                 {{ feature.badge }}
               </span>
             </figure>
-            <div class="flex flex-1 flex-col gap-3">
-              <h3 class="text-lg font-semibold text-navy-500">
+            <div class="flex flex-1 flex-col justify-start gap-2">
+              <h3 class="text-lg font-semibold text-navy-500 min-h-[3.5rem]">
                 {{ feature.title }}
               </h3>
-              <p class="text-sm text-slate-600">
+              <p class="text-sm text-slate-600 min-h-[4rem]">
                 {{ feature.description }}
               </p>
             </div>

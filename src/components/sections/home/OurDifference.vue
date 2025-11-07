@@ -1,5 +1,5 @@
 ﻿<template>
-  <section class="bg-white py-40">
+  <section class="bg-white py-20">
     <div class="container mx-auto px-4 text-center">
       <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-500">
         Our Difference

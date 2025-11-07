@@ -1,7 +1,7 @@
 <template>
   <section class="bg-[#0c233f] py-20 text-white">
     <div class="container mx-auto px-4">
-      <div class="grid gap-10 lg:grid-cols-[1.1fr_1fr]">
+      <div class="grid gap-10 lg:grid-cols-[114fr_1fr]">
         <div class="space-y-4">
           <p
             class="text-sm font-semibold uppercase tracking-[0.35em] text-sky-300"
@@ -13,12 +13,12 @@
           >
             Trusted logistics execution for Australian commercial teams
           </h2>
+          <p class="text-base text-slate-100/90">
+            TUCO blends deep carrier relationships with the Freightmate control
+            tower, delivering measurable outcomes across every shipment, site,
+            and stakeholder you manage.
+          </p>
         </div>
-        <p class="text-base text-slate-100/90">
-          TUCO blends deep carrier relationships with the Freightmate control
-          tower, delivering measurable outcomes across every shipment, site, and
-          stakeholder you manage.
-        </p>
       </div>
 
       <div class="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">

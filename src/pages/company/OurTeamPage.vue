@@ -1,9 +1,7 @@
 <template>
   <div class="bg-[var(--color-tuco-sky)]/20">
     <section class="py-16 md:py-24" aria-labelledby="our-team-hero">
-      <div
-        class="mx-auto grid max-w-7xl gap-12 px-4 md:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:items-center"
-      >
+      <div class="mx-auto grid max-w-7xl gap-12 px-4 md:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:items-center">
         <div class="space-y-6">
           <p
             class="text-sm font-semibold uppercase tracking-[0.35em] text-[var(--color-tuco-blue)]"
@@ -16,7 +14,7 @@
           >
             We work so you don't have to.
           </h1>
-          <p class="text-lg leading-relaxed text-[var(--color-tuco-slate)]">
+          <p class="text-lg text-[var(--color-tuco-slate)]">
             Smart freight, powered by people who care. We combine proven
             logistics expertise with technology and relentless customer focus so
             your team can focus on growth.
@@ -94,7 +92,7 @@
           class="rounded-xl border border-[var(--color-tuco-line)] bg-[var(--color-tuco-card)] p-8 shadow-lg/5"
         >
           <h3 class="text-lg font-semibold text-[var(--color-tuco-navy)]">
-            Values
+            Our Values
           </h3>
           <ul
             class="mt-6 grid gap-3 text-[var(--color-tuco-slate)] sm:grid-cols-2 lg:grid-cols-3"
@@ -102,7 +100,7 @@
             <li
               v-for="value in values"
               :key="value.highlight"
-              class="rounded-xl border border-[var(--color-tuco-line)] bg-white/70 p-4 transition hover:-translate-y-[2px] hover:bg-white hover:shadow-card-soft"
+              class="rounded-xl bg-white/70 p-4 transition hover:-translate-y-[2px] hover:bg-white hover:shadow-card-soft"
             >
               <span class="font-semibold text-[var(--color-tuco-navy)]">
                 {{ value.prefix }}&nbsp;

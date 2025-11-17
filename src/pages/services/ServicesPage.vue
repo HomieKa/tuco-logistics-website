@@ -1,34 +1,56 @@
 <template>
   <div class="bg-[var(--color-tuco-sky)]/20">
     <div
-      class="sticky top-20 z-30 border-b border-[var(--color-tuco-line)] bg-[var(--color-tuco-card)]"
+      class="sticky z-20 border-b border-[var(--color-tuco-line)] bg-[#f8f9f9] transition-all duration-200"
+      :class="isCondensed ? 'top-[80px] py-3 shadow-sm' : 'top-[72px] py-4'"
     >
-      <div class="mx-auto max-w-7xl px-4 py-4 md:px-6 lg:px-8">
+      <div
+        class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8"
+        :class="isCondensed ? 'flex items-center' : ''"
+      >
         <div
-          class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between"
+          class="grid gap-6"
+          :class="
+            isCondensed
+              ? 'lg:grid-cols-1'
+              : 'lg:grid-cols-[1.1fr_auto] lg:items-center lg:justify-between'
+          "
         >
-          <div>
-            <h1
-              class="text-3xl font-semibold text-[var(--color-tuco-navy)] md:text-4xl"
+          <div v-if="!isCondensed" class="space-y-3">
+            <p
+              class="text-sm font-semibold uppercase tracking-[0.35em] text-[var(--color-tuco-blue)]"
             >
-              Our Services
+              Services
+            </p>
+            <h1
+              class="text-4xl font-semibold text-[var(--color-tuco-navy)] md:text-5xl"
+              >
+              Our services, delivered your way
             </h1>
-            <p class="mt-1 text-sm text-[var(--color-tuco-slate)]">
+            <p
+              class="max-w-3xl text-base leading-relaxed text-[var(--color-tuco-slate)] md:text-lg"
+            >
               Comprehensive freight management built around your business.
             </p>
           </div>
-          <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div
+            class="flex w-full flex-nowrap items-center gap-3 overflow-x-auto whitespace-nowrap pb-1 lg:justify-end"
+            :class="isCondensed ? '' : 'flex-wrap sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:whitespace-normal sm:overflow-visible sm:pb-0'"
+          >
             <button
               v-for="section in sections"
               :key="section.id"
               type="button"
               :aria-pressed="activeSection === section.id"
               @click="scrollToSection(section.id)"
-              class="rounded-2xl border border-[var(--color-tuco-line)] bg-white px-4 py-3 text-left text-sm font-semibold text-[var(--color-tuco-navy)] shadow-sm transition hover:-translate-y-1 hover:shadow-lg/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-tuco-blue)] focus-visible:ring-offset-2"
+              class="rounded-xl border border-[var(--color-tuco-line)] bg-white px-4 py-3 text-left text-sm font-semibold text-[var(--color-tuco-navy)] shadow-sm transition hover:-translate-y-1 hover:shadow-lg/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-tuco-blue)] "
               :class="
-                activeSection === section.id
-                  ? 'border-[var(--color-tuco-blue)] bg-[var(--color-tuco-blue)]/10'
-                  : ''
+                [
+                  activeSection === section.id
+                    ? 'border-[var(--color-tuco-blue)] bg-[var(--color-tuco-blue)]/10'
+                    : '',
+                  isCondensed ? 'px-3 py-2 text-xs' : '',
+                ]
               "
             >
               {{ section.label }}
@@ -47,7 +69,7 @@
       >
         <div class="relative left-1/2 w-screen -translate-x-1/2 bg-[#f3f5fb]">
           <div
-            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32"
+            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-20"
           >
             <p
               class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]"
@@ -116,7 +138,7 @@
       >
         <div class="relative left-1/2 w-screen -translate-x-1/2 bg-[#f7f9fd]">
           <div
-            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32"
+            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-20"
           >
             <p
               class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]"
@@ -186,7 +208,7 @@
       >
         <div class="relative left-1/2 w-screen -translate-x-1/2 bg-[#f3f5fb]">
           <div
-            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32"
+            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-20"
           >
             <p
               class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]"
@@ -254,7 +276,7 @@
       >
         <div class="relative left-1/2 w-screen -translate-x-1/2 bg-[#f7f9fd]">
           <div
-            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32"
+            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-20"
           >
             <p
               class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]"
@@ -324,7 +346,7 @@
       >
         <div class="relative left-1/2 w-screen -translate-x-1/2 bg-[#f3f5fb]">
           <div
-            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32"
+            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-20"
           >
             <p
               class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]"
@@ -418,7 +440,7 @@
       <section id="industries" aria-labelledby="industries-title" class="py-0">
         <div class="relative left-1/2 w-screen -translate-x-1/2 bg-[#f7f9fd]">
           <div
-            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-32"
+            class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-24 lg:px-8 lg:py-20"
           >
             <p
               class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]"
@@ -553,6 +575,7 @@ const sections = [
 ];
 
 const activeSection = ref(sections[0].id);
+const isCondensed = ref(false);
 const route = useRoute();
 const router = useRouter();
 const observer = ref<IntersectionObserver | null>(null);
@@ -823,6 +846,7 @@ onMounted(() => {
     }
     stepCarousel();
     window.addEventListener("resize", updateCarouselMeasurements);
+    window.addEventListener("scroll", handleHeroCondense, { passive: true });
     setTimeout(updateCarouselMeasurements, 500);
   });
 });
@@ -833,6 +857,7 @@ onBeforeUnmount(() => {
   }
   observer.value?.disconnect();
   window.removeEventListener("resize", updateCarouselMeasurements);
+  window.removeEventListener("scroll", handleHeroCondense);
 });
 
 function setupObserver() {
@@ -873,7 +898,7 @@ function syncHashScroll() {
 }
 
 function smoothScrollTo(element: HTMLElement) {
-  const headerOffset = 120;
+  const headerOffset = isCondensed.value ? 110 : 140;
   const elementPosition = element.getBoundingClientRect().top + window.scrollY;
   const offsetPosition = Math.max(elementPosition - headerOffset, 0);
   window.scrollTo({ top: offsetPosition, behavior: "smooth" });
@@ -902,6 +927,10 @@ function handleCarrierError(logo: string) {
 
 function isLogoBroken(logo: string) {
   return brokenCarrierLogos.value.has(logo);
+}
+
+function handleHeroCondense() {
+  isCondensed.value = window.scrollY > 10;
 }
 </script>
 

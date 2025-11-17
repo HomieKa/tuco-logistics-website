@@ -29,7 +29,7 @@
         <article
           v-for="feature in features"
           :key="feature.title"
-          class="group flex flex-col gap-4 rounded-2xl bg-white p-8 transition duration-200 hover:-translate-y-1 hover:shadow-2xl"
+          class="group flex flex-col gap-4 rounded-2xl p-8 transition duration-200 hover:-translate-y-1 hover:shadow-2xl"
         >
           <div v-if="feature.image" class="overflow-hidden rounded-xl">
             <img

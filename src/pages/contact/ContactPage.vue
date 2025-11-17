@@ -15,9 +15,9 @@
           <ContactForm />
         </div>
         <div
-          class="flex h-full flex-col gap-8 rounded-[1rem] bg-gradient-to-br from-[#e9f6f2] via-[#eef7fb] to-[#dff1ef] p-8 shadow-xl"
+          class="flex h-full flex-col gap-6 justify-between rounded-[1rem] border border-[var(--color-tuco-line)] bg-white p-8 shadow-card-soft"
         >
-          <div class="space-y-4">
+          <div class="space-y-3">
             <p
               class="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-tuco-blue)]"
             >
@@ -26,20 +26,20 @@
             <h3 class="text-2xl font-bold text-navy-500">
               Talk with TUCO specialists
             </h3>
-            <p class="text-[var(--color-tuco-slate)]">
+            <p class="text-[var(--color-tuco-slate)] leading-relaxed">
               Share your freight goals and our commercial team will line up the
               right experts for a tailored walkthrough.
             </p>
           </div>
 
-          <div class="space-y-6 text-gray-700">
+          <div class="space-y-4 text-gray-700">
             <div
-              class="flex items-center gap-4 rounded-[1rem] bg-white/80 p-4 shadow-card-soft"
+              class="flex items-center gap-3 rounded-[0.875rem] bg-white/80 p-4"
             >
               <span
-                class="flex h-12 w-12 items-center justify-center rounded-[1rem] bg-[var(--color-tuco-sky)]/40 text-[var(--color-tuco-blue)]"
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-tuco-sky)]/40 text-[var(--color-tuco-blue)]"
               >
-                <PhoneIcon class="h-6 w-6" aria-hidden="true" />
+                <PhoneIcon class="h-5 w-5" aria-hidden="true" />
               </span>
               <div>
                 <span class="sr-only">Phone</span>
@@ -51,12 +51,12 @@
               </div>
             </div>
             <div
-              class="flex items-center gap-4 rounded-[1rem] bg-white/80 p-4 shadow-card-soft"
+              class="flex items-center gap-3 rounded-[0.875rem] bg-white/80 p-4"
             >
               <span
-                class="flex h-12 w-12 items-center justify-center rounded-[1rem] bg-[var(--color-tuco-sky)]/40 text-[var(--color-tuco-blue)]"
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-tuco-sky)]/40 text-[var(--color-tuco-blue)]"
               >
-                <EnvelopeIcon class="h-6 w-6" aria-hidden="true" />
+                <EnvelopeIcon class="h-5 w-5" aria-hidden="true" />
               </span>
               <div>
                 <span class="sr-only">Email</span>
@@ -70,10 +70,10 @@
           </div>
 
           <div
-            class="flex flex-col gap-4 rounded-[1rem] bg-white/80 p-5 shadow-card-soft"
+            class="flex flex-col gap-3 rounded-[1rem] bg-white/80 p-5"
           >
             <div class="flex items-center gap-3 text-navy-500">
-              <ClockIcon class="h-5 w-5" aria-hidden="true" />
+              <ClockIcon class="h-5 w-5 shrink-0" aria-hidden="true" />
               <div>
                 <p
                   class="text-sm font-semibold uppercase tracking-wide text-[var(--color-tuco-blue)]"
@@ -86,7 +86,7 @@
               </div>
             </div>
             <div class="flex items-center gap-3 text-navy-500">
-              <PaperAirplaneIcon class="h-5 w-5 rotate-6" aria-hidden="true" />
+              <PaperAirplaneIcon class="h-5 w-5 rotate-6 shrink-0" aria-hidden="true" />
               <div>
                 <p
                   class="text-sm font-semibold uppercase tracking-wide text-[var(--color-tuco-blue)]"

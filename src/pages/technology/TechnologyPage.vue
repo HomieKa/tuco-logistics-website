@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-[#f7f9fd]">
+  <div class="bg-[#f8f9f9]">
     <section class="py-16 md:py-24">
       <div
-        class="mx-auto flex max-w-6xl flex-col gap-12 px-4 lg:grid lg:grid-cols-[1.15fr_0.95fr] lg:items-center lg:gap-16 lg:px-10"
+        class="container mx-auto flex max-w-7xl flex-col gap-12 px-4 lg:grid lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16 lg:px-8"
         aria-labelledby="technology-hero"
       >
         <div class="space-y-6 text-center lg:max-w-none lg:text-left">
@@ -24,17 +24,17 @@
           </p>
         </div>
 
-        <div class="w-full lg:max-w-none lg:self-stretch">
+        <div class="w-full lg:max-w-none lg:self-start">
           <div
-            class="h-full rounded-[1.5rem] border border-[var(--color-tuco-line)] bg-[var(--color-tuco-card)] p-10 text-left shadow-card-soft"
+            class="rounded-xl border border-[var(--color-tuco-line)] bg-white/80 p-6 text-left shadow-card-soft backdrop-blur"
           >
             <h3
               class="text-xl font-semibold text-[var(--color-tuco-navy)] text-center"
             >
               Platform snapshot
             </h3>
-            <dl class="mt-6 grid gap-6 sm:grid-cols-2">
-              <div>
+            <dl class="mt-6 grid grid-cols-2 gap-x-8 gap-y-6">
+              <div class="space-y-1">
                 <dt
                   class="text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-tuco-blue)]"
                 >
@@ -49,7 +49,7 @@
                   Parcel, pallet, airfreight, linehaul, courier, and specialist.
                 </p>
               </div>
-              <div>
+              <div class="space-y-1">
                 <dt
                   class="text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-tuco-blue)]"
                 >
@@ -65,7 +65,7 @@
                   baked in.
                 </p>
               </div>
-              <div>
+              <div class="space-y-1">
                 <dt
                   class="text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-tuco-blue)]"
                 >
@@ -81,7 +81,7 @@
                   management.
                 </p>
               </div>
-              <div>
+              <div class="space-y-1">
                 <dt
                   class="text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-tuco-blue)]"
                 >
@@ -113,17 +113,10 @@
         <p
           class="mx-auto mt-4 max-w-3xl text-center text-[var(--color-tuco-slate)]"
         >
-          TUCO owns Freightmate - the SaaS platform that cares for your freight
-          program. We take every piece of customer feedback, real-time data
-          insight, and operator idea, iterating quickly so we keep improving
-          orchestration and clarity.
-        </p>
-
-        <p
-          class="mx-auto mt-4 max-w-3xl text-center text-[var(--color-tuco-slate)]"
-        >
-          Freightmate keeps every stakeholder on the same story, from the first
-          quote through to proactive reviews and optimisation.
+          TUCO owns and operates Freightmate - our SaaS platform that brings
+          quoting, booking, tracking, and billing into one place so every
+          stakeholder stays on the same story, from the first quote through
+          proactive reviews and optimisation.
         </p>
         <div
           class="mt-16 overflow-hidden rounded-[2rem] border border-[var(--color-tuco-line)] bg-black/90 p-2 shadow-card-soft"
@@ -141,28 +134,13 @@
           <article
             v-for="module in modules"
             :key="module.title"
-            class="group flex flex-col gap-4 rounded-2xl bg-white p-8 transition duration-200 hover:-translate-y-1 hover:shadow-2xl"
+            class="group flex flex-col gap-4 rounded-xl bg-transparent p-6 transition duration-200 hover:-translate-y-1 hover:bg-[#f7f9fd] hover:shadow-card-soft"
           >
             <div class="flex items-start gap-4">
               <span
-                class="mt-1 inline-flex h-11 w-11 flex-none items-center justify-center rounded-full bg-[var(--color-tuco-sky)] text-[var(--color-tuco-blue)]"
+                class="mt-1 inline-flex h-11 w-11 flex-none items-center justify-center rounded-full bg-[var(--color-tuco-sky)]/60 text-[var(--color-tuco-blue)]"
               >
-                <svg
-                  class="h-6 w-6"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    opacity="0.2"
-                    fill="currentColor"
-                  />
-                  <path d="M12 7v10M7 12h10" stroke-linecap="round" />
-                </svg>
+                <component :is="module.icon" class="h-6 w-6" />
               </span>
               <div>
                 <h3
@@ -170,33 +148,20 @@
                 >
                   {{ module.title }}
                 </h3>
-                <p
-                  class="mt-2 text-sm text-[var(--color-tuco-slate)] md:text-base"
-                >
+                <p class="mt-2 text-sm text-[var(--color-tuco-slate)] md:text-base">
                   {{ module.body }}
                 </p>
               </div>
             </div>
-            <ul
-              class="mt-auto space-y-3 text-sm text-[var(--color-tuco-slate)]"
-            >
-              <li
-                v-for="point in module.points"
-                :key="point"
-                class="flex gap-3 text-left"
-              >
-                <span
-                  class="mt-1 inline-block h-1.5 w-1.5 flex-none rounded-full bg-[var(--color-tuco-blue)]"
-                />
-                <span>{{ point }}</span>
-              </li>
-            </ul>
+            <p class="mt-auto text-sm text-[var(--color-tuco-slate)]">
+              {{ module.detail }}
+            </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="bg-[#f3f5fb] py-16">
+    <section class="bg-[#f7f9fd] py-16">
       <div
         class="container mx-auto grid gap-12 px-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-center"
       >
@@ -215,7 +180,7 @@
             <div
               v-for="stage in onboarding"
               :key="stage.title"
-              class="rounded-2xl border border-[var(--color-tuco-line)] bg-white p-5"
+              class="rounded-2xl p-5 transition duration-200 hover:-translate-y-1 hover:bg-[#f7f9fd] hover:shadow-card-soft"
             >
               <h3 class="text-lg font-semibold text-[var(--color-tuco-navy)]">
                 {{ stage.title }}
@@ -271,62 +236,58 @@
 import Button from "@/components/ui/Button.vue";
 import CallToAction from "@/components/ui/CallToAction.vue";
 import freightmateVideo from "@/assets/videos/freightmate_video.mp4";
+import {
+  ArrowsRightLeftIcon,
+  ClipboardDocumentCheckIcon,
+  LockClosedIcon,
+  PresentationChartLineIcon,
+  ShieldCheckIcon,
+  SignalIcon,
+} from "@heroicons/vue/24/outline";
 import { useSEO } from "@/composables/useSEO";
 
 const modules = [
   {
     title: "Quote, rank & route",
-    body: "Rate every contracted carrier in seconds with rules you control.",
-    points: [
-      "Handles volumetric, multi-leg, premium freight logic.",
-      "Business rules surface best-fit options instantly.",
-      "Scenario checks flag capacity or compliance risks.",
-    ],
+    body: "Rate every contracted carrier in seconds.",
+    detail:
+      "Applies volumetric and multi-leg logic, your pricing rules, and flags capacity or compliance risks so best-fit options surface instantly.",
+    icon: ArrowsRightLeftIcon,
   },
   {
     title: "Book & dispatch",
     body: "Create consignments, manifests, and labels without slowing the dock.",
-    points: [
-      "Batch print, stage, and scan straight from the floor.",
-      "Carrier docs auto-generate, dangerous goods included.",
-      "Exception paths cover ATL, POD imagery, relabels.",
-    ],
+    detail:
+      "Batch print, stage, and scan while carrier docs auto-generate (including dangerous goods) with exception paths for ATL, POD imagery, and relabels.",
+    icon: ClipboardDocumentCheckIcon,
   },
   {
     title: "Track & communicate",
     body: "One live timeline shows every milestone, POD, and exception.",
-    points: [
-      "Harmonised carrier feeds create consistent milestones.",
-      "Branded notifications keep consignees in the loop.",
-      "Exception dashboards highlight SLA impact first.",
-    ],
+    detail:
+      "Harmonised carrier feeds keep milestones consistent, branded notifications keep consignees informed, and alerts highlight delays or damages first.",
+    icon: SignalIcon,
   },
   {
     title: "Service assurance",
     body: "Monitor SLAs, capture exceptions, and keep freight on-plan.",
-    points: [
-      "Escalation flows bring TUCO and your team together fast.",
-      "Scorecards cover DIFOT, dwell time, and root causes.",
-      "Notification templates push updates out automatically.",
-    ],
+    detail:
+      "Fast escalation flows with DIFOT and dwell scorecards plus automated notification templates keep teams aligned.",
+    icon: ShieldCheckIcon,
   },
   {
     title: "Analytics & BI",
-    body: "Dashboards show DIFOT, carbon, utilisation, and carrier performance.",
-    points: [
-      "Pre-built views tuned for leadership, ops, and commercial.",
-      "Schedule reports or export via CSV/API in one click.",
-      "Webhooks feed downstream automation instantly.",
-    ],
+    body: "Dashboards show DIFOT, carbon, utilisation, and performance.",
+    detail:
+      "Pre-built views for leadership and ops with scheduled reports, CSV/API export, and webhooks for automation.",
+    icon: PresentationChartLineIcon,
   },
   {
     title: "Governance & security",
     body: "Role-based controls, audit trails, and compliance tooling built-in.",
-    points: [
-      "Supports SSO, MFA, and IP restrictions out of the box.",
-      "Track every booking, override, and communication.",
-      "Store carrier contracts, SOPs, and safety docs securely.",
-    ],
+    detail:
+      "SSO, MFA, and IP restrictions with full auditing so bookings, comms, contracts, and safety docs stay secure.",
+    icon: LockClosedIcon,
   },
 ];
 

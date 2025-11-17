@@ -1,15 +1,23 @@
 <template>
   <div>
-    <section class="py-0" aria-labelledby="why-intro">
-      <div class="relative left-1/2 w-screen -translate-x-1/2 bg-[#f8f9f9X]">
-        <div class="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-20 lg:px-8">
+    <section
+      class="bg-[var(--color-tuco-sky)]/20 py-16 md:py-24"
+      aria-labelledby="why-intro"
+    >
+      <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+        <div class="space-y-6">
+          <p
+            class="text-sm font-semibold uppercase tracking-[0.35em] text-[var(--color-tuco-blue)]"
+          >
+            Why TUCO
+          </p>
           <h1
             id="why-intro"
             class="text-4xl font-semibold text-[var(--color-tuco-navy)] md:text-5xl"
           >
             Why companies choose TUCO
           </h1>
-          <p class="mt-3 max-w-2xl text-[var(--color-tuco-slate)]">
+          <p class="text-lg text-[var(--color-tuco-slate)] max-w-3xl">
             Strategic partnerships, measurable ROI, and a freight program
             tailored to your business.
           </p>

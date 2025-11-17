@@ -154,5 +154,5 @@
 
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
-import logo_invert from "@/assets/images/tuco_logo.svg";
+import logo_invert from "@/assets/images/tuco_logo_invert.svg";
 </script>

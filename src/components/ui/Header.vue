@@ -4,12 +4,12 @@
       <div class="flex h-20 items-center justify-between">
         <RouterLink to="/" class="flex items-center gap-3" @click="closeMenu">
           <img
-            :src="logo_invert"
+            :src="isScrolled ? logo_invert : logo"
             alt="TUCO Logistics"
             class="h-14 w-auto transition duration-200"
-            :class="isScrolled ? '' : 'invert'"
           />
         </RouterLink>
+
 
         <div class="hidden items-center space-x-8 lg:flex">
           <RouterLink
@@ -130,7 +130,9 @@
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 
-import logo_invert from "@/assets/images/tuco_logo.svg";
+import logo_invert from "@/assets/images/tuco_logo_invert.svg";
+import logo from "@/assets/images/tuco_logo.svg";
+
 
 const mobileMenuOpen = ref(false);
 const isScrolled = ref(false);

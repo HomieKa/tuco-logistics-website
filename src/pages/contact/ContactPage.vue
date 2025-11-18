@@ -288,11 +288,6 @@ const handleError = () => {
   submitState.value = "error";
 };
 
-const resetCard = () => {
-  submitted.value = false;
-  submitState.value = "idle";
-};
-
 const locations = [
   {
     city: "Melbourne",

@@ -34,6 +34,7 @@
 
 <script setup lang="ts">
 import { SparklesIcon } from "@heroicons/vue/24/outline";
+import type { Component } from "vue";
 
 interface ReasonItem {
   title: string;
@@ -46,7 +47,7 @@ withDefaults(
     items: ReasonItem[];
     accent?: string;
     accentBullet?: string;
-    icon?: any;
+    icon?: Component;
   }>(),
   {
     accent: "bg-[#e9f5f7] text-[#62bda5]",

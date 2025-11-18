@@ -952,7 +952,6 @@ function handleScrollThrottled() {
 
 function handleHeroCondense(y = window.scrollY) {
   const collapseAt = 4;
-  const expandAt = 0;
   const nextCondensed = y > collapseAt;
   if (nextCondensed !== isCondensed.value) {
     isCondensed.value = nextCondensed;
